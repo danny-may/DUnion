@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using Wrapped.Valid.JsonValue;
 
-namespace DUnion;
+namespace DUnion.SubTyped;
 
 public static class JsonValueTests
 {
-    private static readonly JsonValue[] _array = [new JsonValue.Number(123), new JsonValue.String("abc")];
+    private static readonly JsonValue[] _array = new JsonValue[] { new JsonValue.Number(123), new JsonValue.String("abc") };
 
     private static readonly IReadOnlyDictionary<string, JsonValue> _object = new Dictionary<string, JsonValue>
     {
@@ -115,7 +115,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.Array> IsArray_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), false, default },
         { new(new JsonValue.String("abc")), false, default },
         { new(new JsonValue.Number(123)), false, default },
@@ -127,7 +127,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.Boolean> IsBoolean_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), false, default },
         { new(new JsonValue.String("abc")), false, default },
         { new(new JsonValue.Number(123)), false, default },
@@ -139,7 +139,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.Null> IsNull_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), true, new() },
         { new(new JsonValue.String("abc")), false, default },
         { new(new JsonValue.Number(123)), false, default },
@@ -151,7 +151,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.Number> IsNumber_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), false, default },
         { new(new JsonValue.String("abc")), false, default },
         { new(new JsonValue.Number(123)), true, new(123) },
@@ -163,7 +163,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.Object> IsObject_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), false, default },
         { new(new JsonValue.String("abc")), false, default },
         { new(new JsonValue.Number(123)), false, default },
@@ -175,7 +175,7 @@ public static class JsonValueTests
 
     public static TheoryData<JsonValue, bool, JsonValue.String> IsString_Data => new()
     {
-        { new(), false, default },
+        { State(0), false, default },
         { new(new JsonValue.Null()), false, default },
         { new(new JsonValue.String("abc")), true, new("abc")},
         { new(new JsonValue.Number(123)), false, default },
@@ -612,7 +612,7 @@ public static class JsonValueTests
     public static void Match_NoDefault_Uninitialized()
     {
         // arrange
-        var sut = new JsonValue();
+        var sut = State(0);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(
@@ -631,8 +631,7 @@ public static class JsonValueTests
     public static void Match_NoDefault_Unsupported()
     {
         // arrange
-        var ctor = typeof(JsonValue).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, [typeof(byte), typeof(object)])!;
-        var sut = (JsonValue)ctor.Invoke([(byte)7, new JsonValue.Null()]);
+        var sut = State(7);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(
@@ -714,7 +713,7 @@ public static class JsonValueTests
     public static void Match_WithDefault_Uninitialized()
     {
         // arrange
-        var sut = new JsonValue();
+        var sut = State(0);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(@default: MatchFail));
@@ -727,8 +726,7 @@ public static class JsonValueTests
     public static void Match_WithDefault_Unsupported()
     {
         // arrange
-        var ctor = typeof(JsonValue).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, [typeof(byte), typeof(object)])!;
-        var sut = (JsonValue)ctor.Invoke([(byte)7, new JsonValue.Null()]);
+        var sut = State(7);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(@default: MatchFail));
@@ -782,7 +780,7 @@ public static class JsonValueTests
     public static void Switch_NoDefault_Uninitialized()
     {
         // arrange
-        var sut = new JsonValue();
+        var sut = State(0);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(
@@ -801,8 +799,7 @@ public static class JsonValueTests
     public static void Switch_NoDefault_Unsupported()
     {
         // arrange
-        var ctor = typeof(JsonValue).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, [typeof(byte), typeof(object)])!;
-        var sut = (JsonValue)ctor.Invoke([(byte)7, new JsonValue.Null()]);
+        var sut = State(7);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(
@@ -890,7 +887,7 @@ public static class JsonValueTests
     public static void Switch_WithDefault_Uninitialized()
     {
         // arrange
-        var sut = new JsonValue();
+        var sut = State(0);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(@default: SwitchFail));
@@ -903,8 +900,7 @@ public static class JsonValueTests
     public static void Switch_WithDefault_Unsupported()
     {
         // arrange
-        var ctor = typeof(JsonValue).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, [typeof(byte), typeof(object)])!;
-        var sut = (JsonValue)ctor.Invoke([(byte)7, new JsonValue.Null()]);
+        var sut = State(7);
 
         // act
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(@default: SwitchFail));
@@ -921,6 +917,12 @@ public static class JsonValueTests
     private static object? MatchFail()
     {
         throw new Exception("Match shouldnt have worked.");
+    }
+
+    private static JsonValue State(byte state)
+    {
+        var ctor = typeof(JsonValue).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, new[] { typeof(byte), typeof(object) })!;
+        return (JsonValue)ctor.Invoke(new object?[] { state, new JsonValue.Null() });
     }
 
     private readonly record struct V<T>(T Value);
