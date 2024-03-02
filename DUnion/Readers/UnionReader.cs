@@ -5,7 +5,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -14,11 +13,11 @@ namespace DUnion.Readers;
 internal sealed class UnionReader : IUnionReader
 {
     private static readonly Regex _identifier = new(@"^(?:((?!\d)\w+(?:\.(?!\d)\w+)*)\.)?((?!\d)\w+)$", RegexOptions.Compiled);
-    private readonly ImmutableDictionary<UnionKind, INamedSymbolUnionReader> _readers;
+    private readonly INamedSymbolUnionReader _reader;
 
-    public UnionReader(IEnumerable<KeyValuePair<UnionKind, INamedSymbolUnionReader>> readers)
+    public UnionReader(INamedSymbolUnionReader reader)
     {
-        _readers = readers.ToImmutableDictionary();
+        _reader = reader;
     }
 
     public IUnionGenerator Read(GeneratorAttributeSyntaxContext context)
@@ -30,29 +29,10 @@ internal sealed class UnionReader : IUnionReader
             return new EmptyUnionGenerator(location).WithDiagnostics([Diagnostics.NotAClassOrStruct(target)]);
 
         var diagnostics = new List<Models.Diagnostic>();
-        if (!TryReadConfig(context, diagnostics.Add, out var config, out var reader))
+        if (!TryReadConfig(context, diagnostics.Add, out var config))
             return new EmptyUnionGenerator(location).WithDiagnostics(diagnostics);
 
-        return reader.Read(config, target, context);
-    }
-
-    private static bool TryConvertToUnionType(object? value, out UnionKind type)
-    {
-        switch (value)
-        {
-            case byte i: type = (UnionKind)i; return true;
-            case sbyte i: type = (UnionKind)i; return true;
-            case short i: type = (UnionKind)i; return true;
-            case ushort i: type = (UnionKind)i; return true;
-            case int i: type = (UnionKind)i; return true;
-            case uint i: type = (UnionKind)i; return true;
-            case long i: type = (UnionKind)i; return true;
-            case ulong i: type = (UnionKind)i; return true;
-            case nint i: type = (UnionKind)i; return true;
-            case nuint i: type = (UnionKind)i; return true;
-            case string s: return Enum.TryParse(s, out type);
-            default: type = default; return false;
-        }
+        return _reader.Read(config, target, context);
     }
 
     private static bool TryFindNamedArgument(AttributeData attribute, string name, out AttributeValueResult result)
@@ -78,12 +58,11 @@ internal sealed class UnionReader : IUnionReader
         return false;
     }
 
-    private bool TryReadConfig(GeneratorAttributeSyntaxContext context, Action<Models.Diagnostic> report, out UnionConfig config, [NotNullWhen(true)] out INamedSymbolUnionReader? reader)
+    private bool TryReadConfig(GeneratorAttributeSyntaxContext context, Action<Models.Diagnostic> report, out UnionConfig config)
     {
         if (context.Attributes.Length == 0)
         {
             config = default;
-            reader = null;
             return false;
         }
 
@@ -93,7 +72,6 @@ internal sealed class UnionReader : IUnionReader
         var attribute = context.Attributes[0];
         var results = new[]
         {
-            TryReadUnionType(attribute, report, out reader),
             TryReadNamedIdentifierArgument(attribute, Constants.DUnionDiscriminator, report, out var discriminator),
             TryReadNamedIdentifierArgument(attribute, Constants.DUnionUnderlyingValue, report, out var underlyingValue),
             TryReadNamedIdentifierArgument(attribute, Constants.DUnionSwitch, report, out var @switch),
@@ -101,7 +79,7 @@ internal sealed class UnionReader : IUnionReader
             TryReadIsCaseName(attribute, report, out var @case),
         };
         config = new(discriminator, underlyingValue, @switch, match, @case);
-        return !results.Contains(false) && reader is not null;
+        return !results.Contains(false);
     }
 
     private bool TryReadIsCaseName(AttributeData attribute, Action<Models.Diagnostic> report, out string? identifier)
@@ -113,7 +91,16 @@ internal sealed class UnionReader : IUnionReader
         }
 
         identifier = prop.Value.Value?.ToString() ?? "";
-        if (!_identifier.IsMatch(identifier.Replace("{0}", "CaseNameGoesHere")))
+        try
+        {
+            var isCaseResult = string.Format(identifier, "CaseNameGoesHere");
+            if (!_identifier.IsMatch(isCaseResult))
+            {
+                report(Diagnostics.InvalidIdentifier(attribute, prop, Constants.DUnionIsCase, identifier));
+                return false;
+            }
+        }
+        catch (FormatException)
         {
             report(Diagnostics.InvalidIdentifier(attribute, prop, Constants.DUnionIsCase, identifier));
             return false;
@@ -140,28 +127,6 @@ internal sealed class UnionReader : IUnionReader
             return false;
         }
 
-        return true;
-    }
-
-    private bool TryReadUnionType(AttributeData attribute, Action<Models.Diagnostic> report, [NotNullWhen(true)] out INamedSymbolUnionReader? reader)
-    {
-        if (!TryFindNamedArgument(attribute, Constants.DUnionType, out var prop))
-        {
-            reader = _readers.Values.First();
-            return true;
-        }
-        if (!TryConvertToUnionType(prop.Value.Value, out var type))
-        {
-            report(Diagnostics.InvalidType(attribute, prop));
-            reader = null;
-            return false;
-        }
-
-        if (!_readers.TryGetValue(type, out reader))
-        {
-            report(Diagnostics.NotSupportedUnionType(attribute, prop, type));
-            return false;
-        }
         return true;
     }
 }

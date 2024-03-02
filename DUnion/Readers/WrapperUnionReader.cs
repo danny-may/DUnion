@@ -11,7 +11,7 @@ internal sealed class WrapperUnionReader : SourceUnionReader
     protected override bool CheckCaseType(CA.INamedTypeSymbol caseSymbol, CA.INamedTypeSymbol unionSymbol, Action<Diagnostic> report)
     {
         if (caseSymbol.IsRefLikeType && caseSymbol.TypeKind == CA.TypeKind.Struct)
-            report(Diagnostics.CaseCannotBeARefStruct(caseSymbol, UnionKind.Wrapper));
+            report(Diagnostics.CaseCannotBeARefStruct(caseSymbol));
         else
             return true;
         return false;
@@ -101,6 +101,6 @@ internal sealed class WrapperUnionReader : SourceUnionReader
             }
             """;
 
-        protected override string UnderlyingType => "global::System.Object";
+        protected override string UnderlyingType => "global::System.Object?";
     }
 }

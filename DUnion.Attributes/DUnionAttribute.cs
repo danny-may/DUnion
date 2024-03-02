@@ -17,17 +17,12 @@ namespace DUnion
         /// <summary>
         /// Sets the name of the unions discriminator value
         /// </summary>
-        public string Discriminator { get; set; }
+        public string DiscriminatorName { get; set; }
 
         /// <summary>
         /// Sets the template used for the IsX method
         /// </summary>
         public string IsCase { get; set; }
-
-        /// <summary>
-        /// Changes how the union is implemented
-        /// </summary>
-        public UnionKind Kind { get; set; }
 
         /// <summary>
         /// Sets the name of the unions Match method
@@ -42,7 +37,7 @@ namespace DUnion
         /// <summary>
         /// Sets the name of the unions underlying value
         /// </summary>
-        public string UnderlyingValue { get; set; }
+        public string ValueName { get; set; }
     }
 }
 

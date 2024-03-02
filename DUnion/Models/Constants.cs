@@ -9,12 +9,11 @@ internal static class Constants
         // =============================================================
         """;
 
-    public const string DUnionDiscriminator = "Discriminator";
+    public const string DUnionDiscriminator = "DiscriminatorName";
     public const string DUnionIsCase = "IsCase";
     public const string DUnionMatch = "Match";
     public const string DUnionSwitch = "Switch";
-    public const string DUnionType = "Kind";
-    public const string DUnionUnderlyingValue = "UnderlyingValue";
+    public const string DUnionUnderlyingValue = "ValueName";
     public static readonly string DUnionExcludeFullName = "DUnion.DUnionExcludeAttribute";
     public static readonly string DUnionFullName = "DUnion.DUnionAttribute";
 }
