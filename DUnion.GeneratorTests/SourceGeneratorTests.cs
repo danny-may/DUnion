@@ -5,10 +5,11 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DUnion.GeneratorTests;
 
-public class SourceGeneratorTests
+public partial class SourceGeneratorTests
 {
     private const string _expectedPostfix = ".expected.cs";
     private const string _testCasesPostfix = ".source.cs";
@@ -55,14 +56,39 @@ public class SourceGeneratorTests
             try
             {
                 var file = $"{testCase.Replace('.', '/')}{_expectedPostfix}";
-                var dir = Path.GetDirectoryName(file);
+                var dir = "Actuals/" + Path.GetDirectoryName(file);
                 if (dir is not null && !Directory.Exists(dir))
                     Directory.CreateDirectory(dir);
-                File.WriteAllText(file, actual);
+                File.WriteAllText("Actuals/" + file, actual);
             }
             catch { }
             throw;
         }
+    }
+
+    [Fact]
+    public void TEST()
+    {
+        RunSourceGenerator("""
+            namespace Testing;
+
+            [DUnion.DUnionAttribute]
+            static class Result
+            {
+                [DUnion.DUnionCaseAttribute(IsCaseName = "IsSuccessful")]
+                public readonly record struct Ok<[DUnion.DUnionGenericAttribute("TOk")]T>(T Value);
+
+                [DUnion.DUnionCaseAttribute(IsCaseName = "IsErrored")]
+                public readonly record struct Err<[DUnion.DUnionGenericAttribute("TError")]T>(T Error);
+            }
+
+            public partial class Result<TOk, TError>
+            {
+                public Result() : this(0, null)
+                {
+                }
+            }
+            """);
     }
 
     private static void AssertNoDiff(string actual, string expected)
@@ -90,6 +116,9 @@ public class SourceGeneratorTests
         Assert.Fail("Expected the generated source(s) to match the expectation, but there were differences:\n" + diffStr);
     }
 
+    [GeneratedRegex(@"(?<=^|\r?\n)// #DEFINE (.*?)(?:\r?\n|$)", RegexOptions.Compiled)]
+    private static partial Regex DefineRegex();
+
     private static string? ReadExpected(string name)
     {
         using var stream = _assembly.GetManifestResourceStream($"{_testCasesPrefix}{name}{_expectedPostfix}");
@@ -108,7 +137,15 @@ public class SourceGeneratorTests
 
     private string RunSourceGenerator(string source)
     {
-        var tree = CSharpSyntaxTree.ParseText(source);
+        var preprocessorSymbols = new List<string>();
+        var regex = DefineRegex();
+        source = regex.Replace(source, m =>
+        {
+            preprocessorSymbols.Add(m.Groups[1].Value);
+            return "";
+        });
+
+        var tree = CSharpSyntaxTree.ParseText(source, options: new(preprocessorSymbols: preprocessorSymbols));
         var references = AppDomain.CurrentDomain.GetAssemblies()
             .Where(x => !x.IsDynamic && !string.IsNullOrWhiteSpace(x.Location))
             .Select(x => MetadataReference.CreateFromFile(x.Location));

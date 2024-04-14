@@ -1,3 +1,3 @@
 ﻿namespace DUnion.Models;
 
-internal readonly record struct UnionConfig(string? Discriminator, string? UnderlyingValue, string? Switch, string? Match, string? IsCase);
+internal sealed record UnionConfig(string DiscriminatorName, string ValueName, string SwitchName, string MatchName, bool UseUnsafe);

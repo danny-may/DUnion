@@ -1,18 +1,224 @@
 ﻿using FluentAssertions;
 using System;
 using System.Collections.Generic;
-using Valid.JsonValue;
 
 namespace DUnion;
 
 public static class JsonValueTests
 {
     private static readonly JsonValue[] _array = new JsonValue[] { new JsonValue.Number(123), new JsonValue.String("abc") };
+    private static readonly JsonValue[] _array2 = new JsonValue[] { new JsonValue.Number(456), new JsonValue.String("def") };
 
     private static readonly IReadOnlyDictionary<string, JsonValue> _object = new Dictionary<string, JsonValue>
     {
         ["p1"] = new JsonValue.Number(123),
         ["p2"] = new JsonValue.String("abc")
+    };
+
+    private static readonly IReadOnlyDictionary<string, JsonValue> _object2 = new Dictionary<string, JsonValue>
+    {
+        ["p1"] = new JsonValue.Number(456),
+        ["p2"] = new JsonValue.String("def")
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Array> AsArrayOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), default },
+        { new JsonValue.String("abc"), default },
+        { new JsonValue.Number(123), default },
+        { new JsonValue.Boolean(true), default },
+        { new JsonValue.Boolean(false), default },
+        { new JsonValue.Array(_array), new(_array) },
+        { new JsonValue.Object(_object), default },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Array, JsonValue.Array> AsArrayOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, default },
+        { new JsonValue.String("abc"), default, default },
+        { new JsonValue.Number(123), default, default },
+        { new JsonValue.Boolean(true), default, default },
+        { new JsonValue.Boolean(false), default, default },
+        { new JsonValue.Array(_array), default, new(_array) },
+        { new JsonValue.Object(_object), default, default },
+        { State(0), new(_array2), new(_array2) },
+        { new JsonValue.Null(), new(_array2), new(_array2) },
+        { new JsonValue.String("abc"), new(_array2), new(_array2) },
+        { new JsonValue.Number(123), new(_array2), new(_array2) },
+        { new JsonValue.Boolean(true), new(_array2), new(_array2) },
+        { new JsonValue.Boolean(false), new(_array2), new(_array2) },
+        { new JsonValue.Array(_array), new(_array2), new(_array) },
+        { new JsonValue.Object(_object), new(_array2), new(_array2) },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Boolean> AsBooleanOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), default },
+        { new JsonValue.String("abc"), default },
+        { new JsonValue.Number(123), default },
+        { new JsonValue.Boolean(true), new(true) },
+        { new JsonValue.Boolean(false), new(false) },
+        { new JsonValue.Array(_array), default },
+        { new JsonValue.Object(_object), default },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Boolean, JsonValue.Boolean> AsBooleanOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, default },
+        { new JsonValue.String("abc"), default, default },
+        { new JsonValue.Number(123), default, default },
+        { new JsonValue.Boolean(true), default, new(true) },
+        { new JsonValue.Boolean(false), default, new(false) },
+        { new JsonValue.Array(_array), default, default },
+        { new JsonValue.Object(_object), default, default },
+        { State(0), new(true), new(true) },
+        { new JsonValue.Null(), new(true), new(true) },
+        { new JsonValue.String("abc"), new(true), new(true) },
+        { new JsonValue.Number(123), new(true), new(true) },
+        { new JsonValue.Boolean(true), new(true), new(true) },
+        { new JsonValue.Boolean(false), new(true), new(false) },
+        { new JsonValue.Array(_array), new(true), new(true) },
+        { new JsonValue.Object(_object), new(true), new(true) },
+        { State(0), new(false), new(false) },
+        { new JsonValue.Null(), new(false), new(false) },
+        { new JsonValue.String("abc"), new(false), new(false) },
+        { new JsonValue.Number(123), new(false), new(false) },
+        { new JsonValue.Boolean(true), new(false), new(true) },
+        { new JsonValue.Boolean(false), new(false), new(false) },
+        { new JsonValue.Array(_array), new(false), new(false) },
+        { new JsonValue.Object(_object), new(false), new(false) },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Null> AsNullOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), new() },
+        { new JsonValue.String("abc"), default },
+        { new JsonValue.Number(123), default },
+        { new JsonValue.Boolean(true), default },
+        { new JsonValue.Boolean(false), default },
+        { new JsonValue.Array(_array), default },
+        { new JsonValue.Object(_object), default },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Null, JsonValue.Null> AsNullOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, new() },
+        { new JsonValue.String("abc"), default, default },
+        { new JsonValue.Number(123), default, default },
+        { new JsonValue.Boolean(true), default, default },
+        { new JsonValue.Boolean(false), default, default },
+        { new JsonValue.Array(_array), default, default },
+        { new JsonValue.Object(_object), default, default },
+        { State(0), new(), new() },
+        { new JsonValue.Null(), new(), new() },
+        { new JsonValue.String("abc"), new(), new() },
+        { new JsonValue.Number(123), new(), new() },
+        { new JsonValue.Boolean(true), new(), new() },
+        { new JsonValue.Boolean(false), new(), new() },
+        { new JsonValue.Array(_array), new(), new() },
+        { new JsonValue.Object(_object), new(), new() },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Number> AsNumberOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), default },
+        { new JsonValue.String("abc"), default },
+        { new JsonValue.Number(123), new(123) },
+        { new JsonValue.Boolean(true), default },
+        { new JsonValue.Boolean(false), default },
+        { new JsonValue.Array(_array), default },
+        { new JsonValue.Object(_object), default },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Number, JsonValue.Number> AsNumberOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, default },
+        { new JsonValue.String("abc"), default, default },
+        { new JsonValue.Number(123), default, new(123) },
+        { new JsonValue.Boolean(true), default, default },
+        { new JsonValue.Boolean(false), default, default },
+        { new JsonValue.Array(_array), default, default },
+        { new JsonValue.Object(_object), default, default },
+        { State(0), new(456), new(456) },
+        { new JsonValue.Null(), new(456), new(456) },
+        { new JsonValue.String("abc"), new(456), new(456) },
+        { new JsonValue.Number(123), new(456), new(123) },
+        { new JsonValue.Boolean(true), new(456), new(456) },
+        { new JsonValue.Boolean(false), new(456), new(456) },
+        { new JsonValue.Array(_array), new(456), new(456) },
+        { new JsonValue.Object(_object), new(456), new(456) },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Object> AsObjectOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), default },
+        { new JsonValue.String("abc"), default },
+        { new JsonValue.Number(123), default },
+        { new JsonValue.Boolean(true), default },
+        { new JsonValue.Boolean(false), default },
+        { new JsonValue.Array(_array), default },
+        { new JsonValue.Object(_object), new(_object) },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.Object, JsonValue.Object> AsObjectOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, default },
+        { new JsonValue.String("abc"), default, default },
+        { new JsonValue.Number(123), default, default },
+        { new JsonValue.Boolean(true), default, default },
+        { new JsonValue.Boolean(false), default, default },
+        { new JsonValue.Array(_array), default, default },
+        { new JsonValue.Object(_object), default, new(_object) },
+        { State(0), new(_object2), new(_object2) },
+        { new JsonValue.Null(), new(_object2), new(_object2) },
+        { new JsonValue.String("abc"), new(_object2), new(_object2) },
+        { new JsonValue.Number(123), new(_object2), new(_object2) },
+        { new JsonValue.Boolean(true), new(_object2), new(_object2) },
+        { new JsonValue.Boolean(false), new(_object2), new(_object2) },
+        { new JsonValue.Array(_array), new(_object2), new(_object2) },
+        { new JsonValue.Object(_object), new(_object2), new(_object) },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.String> AsStringOrDefault_NoArgs_Data => new()
+    {
+        { State(0), default },
+        { new JsonValue.Null(), default },
+        { new JsonValue.String("abc"), new("abc")},
+        { new JsonValue.Number(123), default },
+        { new JsonValue.Boolean(true), default },
+        { new JsonValue.Boolean(false), default },
+        { new JsonValue.Array(_array), default },
+        { new JsonValue.Object(_object), default },
+    };
+
+    public static TheoryData<JsonValue, JsonValue.String, JsonValue.String> AsStringOrDefault_WithArgs_Data => new()
+    {
+        { State(0), default, default },
+        { new JsonValue.Null(), default, default },
+        { new JsonValue.String("abc"), default, new("abc")},
+        { new JsonValue.Number(123), default, default },
+        { new JsonValue.Boolean(true), default, default },
+        { new JsonValue.Boolean(false), default, default },
+        { new JsonValue.Array(_array), default, default },
+        { new JsonValue.Object(_object), default, default },
+        { State(0), new("def"), new("def") },
+        { new JsonValue.Null(), new("def"), new("def") },
+        { new JsonValue.String("abc"), new("def"), new("abc")},
+        { new JsonValue.Number(123), new("def"), new("def") },
+        { new JsonValue.Boolean(true), new("def"), new("def") },
+        { new JsonValue.Boolean(false), new("def"), new("def") },
+        { new JsonValue.Array(_array), new("def"), new("def") },
+        { new JsonValue.Object(_object), new("def"), new("def") },
     };
 
     public static TheoryData<JsonValue, JsonValue.Array?> ExplicitCast_FromJsonValue_ToArrayJsonValue_Data => new()
@@ -112,7 +318,7 @@ public static class JsonValueTests
         { new("abc"), new JsonValue.String("abc") },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.Array?> IsArray_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.Array> IsArray_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), false, default },
@@ -124,7 +330,7 @@ public static class JsonValueTests
         { new JsonValue.Object(_object), false, default },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.Boolean?> IsBoolean_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.Boolean> IsBoolean_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), false, default },
@@ -136,7 +342,7 @@ public static class JsonValueTests
         { new JsonValue.Object(_object), false, default },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.Null?> IsNull_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.Null> IsNull_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), true, new() },
@@ -148,7 +354,7 @@ public static class JsonValueTests
         { new JsonValue.Object(_object), false, default },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.Number?> IsNumber_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.Number> IsNumber_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), false, default },
@@ -160,7 +366,7 @@ public static class JsonValueTests
         { new JsonValue.Object(_object), false, default },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.Object?> IsObject_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.Object> IsObject_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), false, default },
@@ -172,7 +378,7 @@ public static class JsonValueTests
         { new JsonValue.Object(_object), true, new(_object) },
     };
 
-    public static TheoryData<JsonValue, bool, JsonValue.String?> IsString_Data => new()
+    public static TheoryData<JsonValue, bool, JsonValue.String> IsString_Data => new()
     {
         { State(0), false, default },
         { new JsonValue.Null(), false, default },
@@ -315,6 +521,240 @@ public static class JsonValueTests
         new JsonValue.Array(_array),
         new JsonValue.Object(_object),
     };
+
+    [Theory]
+    [MemberData(nameof(AsArrayOrDefault_WithArgs_Data))]
+    public static void AsArrayOrDefault_FactoryArg(JsonValue value, JsonValue.Array @default, JsonValue.Array expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsArrayOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsArrayOrDefault_NoArgs_Data))]
+    public static void AsArrayOrDefault_NoArgs(JsonValue value, JsonValue.Array expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsArrayOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsArrayOrDefault_WithArgs_Data))]
+    public static void AsArrayOrDefault_ValueArg(JsonValue value, JsonValue.Array @default, JsonValue.Array expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsArrayOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsBooleanOrDefault_WithArgs_Data))]
+    public static void AsBooleanOrDefault_FactoryArg(JsonValue value, JsonValue.Boolean @default, JsonValue.Boolean expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsBooleanOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsBooleanOrDefault_NoArgs_Data))]
+    public static void AsBooleanOrDefault_NoArgs(JsonValue value, JsonValue.Boolean expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsBooleanOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsBooleanOrDefault_WithArgs_Data))]
+    public static void AsBooleanOrDefault_ValueArg(JsonValue value, JsonValue.Boolean @default, JsonValue.Boolean expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsBooleanOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNullOrDefault_WithArgs_Data))]
+    public static void AsNullOrDefault_FactoryArg(JsonValue value, JsonValue.Null @default, JsonValue.Null expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNullOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNullOrDefault_NoArgs_Data))]
+    public static void AsNullOrDefault_NoArgs(JsonValue value, JsonValue.Null expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNullOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNullOrDefault_WithArgs_Data))]
+    public static void AsNullOrDefault_ValueArg(JsonValue value, JsonValue.Null @default, JsonValue.Null expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNullOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNumberOrDefault_WithArgs_Data))]
+    public static void AsNumberOrDefault_FactoryArg(JsonValue value, JsonValue.Number @default, JsonValue.Number expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNumberOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNumberOrDefault_NoArgs_Data))]
+    public static void AsNumberOrDefault_NoArgs(JsonValue value, JsonValue.Number expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNumberOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsNumberOrDefault_WithArgs_Data))]
+    public static void AsNumberOrDefault_ValueArg(JsonValue value, JsonValue.Number @default, JsonValue.Number expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsNumberOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsObjectOrDefault_WithArgs_Data))]
+    public static void AsObjectOrDefault_FactoryArg(JsonValue value, JsonValue.Object @default, JsonValue.Object expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsObjectOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsObjectOrDefault_NoArgs_Data))]
+    public static void AsObjectOrDefault_NoArgs(JsonValue value, JsonValue.Object expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsObjectOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsObjectOrDefault_WithArgs_Data))]
+    public static void AsObjectOrDefault_ValueArg(JsonValue value, JsonValue.Object @default, JsonValue.Object expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsObjectOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsStringOrDefault_WithArgs_Data))]
+    public static void AsStringOrDefault_FactoryArg(JsonValue value, JsonValue.String @default, JsonValue.String expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsStringOrDefault(() => @default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsStringOrDefault_NoArgs_Data))]
+    public static void AsStringOrDefault_NoArgs(JsonValue value, JsonValue.String expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsStringOrDefault();
+
+        // assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [MemberData(nameof(AsStringOrDefault_WithArgs_Data))]
+    public static void AsStringOrDefault_ValueArg(JsonValue value, JsonValue.String @default, JsonValue.String expected)
+    {
+        // arrange
+
+        // act
+        var actual = value.AsStringOrDefault(@default);
+
+        // assert
+        actual.Should().Be(expected);
+    }
 
     [Theory]
     [MemberData(nameof(ExplicitCast_FromJsonValue_ToArrayJsonValue_Data))]
@@ -623,7 +1063,7 @@ public static class JsonValueTests
             caseObject: MatchFail));
 
         // assert
-        actual.Message.Should().Be("Union has not been initialized");
+        actual.Message.Should().Be("Union is not initialized");
     }
 
     [Fact]
@@ -642,7 +1082,7 @@ public static class JsonValueTests
             caseObject: MatchFail));
 
         // assert
-        actual.Message.Should().Be("Unsupported discriminator value 7");
+        actual.Message.Should().Be("Union is not valid");
     }
 
     [Theory]
@@ -718,7 +1158,7 @@ public static class JsonValueTests
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(@default: MatchFail));
 
         // assert
-        actual.Message.Should().Be("Union has not been initialized");
+        actual.Message.Should().Be("Union is not initialized");
     }
 
     [Fact]
@@ -731,7 +1171,7 @@ public static class JsonValueTests
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Match(@default: MatchFail));
 
         // assert
-        actual.Message.Should().Be("Unsupported discriminator value 7");
+        actual.Message.Should().Be("Union is not valid");
     }
 
     [Theory]
@@ -791,7 +1231,7 @@ public static class JsonValueTests
             caseObject: SwitchFail));
 
         // assert
-        actual.Message.Should().Be("Union has not been initialized");
+        actual.Message.Should().Be("Union is not initialized");
     }
 
     [Fact]
@@ -810,7 +1250,7 @@ public static class JsonValueTests
             caseObject: SwitchFail));
 
         // assert
-        actual.Message.Should().Be("Unsupported discriminator value 7");
+        actual.Message.Should().Be("Union is not valid");
     }
 
     [Theory]
@@ -892,7 +1332,7 @@ public static class JsonValueTests
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(@default: SwitchFail));
 
         // assert
-        actual.Message.Should().Be("Union has not been initialized");
+        actual.Message.Should().Be("Union is not initialized");
     }
 
     [Fact]
@@ -905,7 +1345,7 @@ public static class JsonValueTests
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(@default: SwitchFail));
 
         // assert
-        actual.Message.Should().Be("Unsupported discriminator value 7");
+        actual.Message.Should().Be("Union is not valid");
     }
 
     private static object? MatchFail<T>(T _)

@@ -38,8 +38,4 @@
     </ProjectReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="..\DUnion.GeneratorTests\TestCases\Valid\**\*.source.cs" Link="TestCases\%(RecursiveDir)%(Filename)%(Extension)" />
-  </ItemGroup>
-
 </Project>

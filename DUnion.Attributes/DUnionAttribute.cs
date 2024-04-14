@@ -20,24 +20,24 @@ namespace DUnion
         public string DiscriminatorName { get; set; }
 
         /// <summary>
-        /// Sets the template used for the IsX method
-        /// </summary>
-        public string IsCase { get; set; }
-
-        /// <summary>
         /// Sets the name of the unions Match method
         /// </summary>
-        public string Match { get; set; }
+        public string MatchName { get; set; }
 
         /// <summary>
         /// Sets the name of the unions Switch method
         /// </summary>
-        public string Switch { get; set; }
+        public string SwitchName { get; set; }
 
         /// <summary>
         /// Sets the name of the unions underlying value
         /// </summary>
         public string ValueName { get; set; }
+
+        /// <summary>
+        /// Enables the use of <see cref="System.Runtime.CompilerServices.Unsafe"/> to speed up type casting.
+        /// </summary>
+        public bool UseUnsafe { get; set; }
     }
 }
 

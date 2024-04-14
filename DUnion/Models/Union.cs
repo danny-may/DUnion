@@ -1,9 +1,3 @@
 ﻿namespace DUnion.Models;
 
-internal readonly record struct Union(
-    string? Namespace,
-    Sequence<TypeRef> ContainingTypes,
-    TypeRef Type,
-    UnionConfig Config,
-    Sequence<TypeRef> Cases,
-    Location Location);
+internal sealed record Union(TypeId Id, TypeDefinition Definition, UnionConfig Config, Sequence<UnionCase> Cases);
