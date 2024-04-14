@@ -1,11 +1,11 @@
 ﻿using DUnion.Models;
-using Microsoft.CodeAnalysis;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
 using static DUnion.Models.Constants;
+using CA = Microsoft.CodeAnalysis;
 
 namespace DUnion;
 
@@ -15,7 +15,7 @@ internal static class GeneratorOutputs
 
     private static readonly Regex _public = new("public", RegexOptions.Compiled);
 
-    public static void ExcludeNonUnionCases(IncrementalGeneratorInitializationContext context)
+    public static void ExcludeNonUnionCases(CA.IncrementalGeneratorInitializationContext context)
     {
         Report(context, context.SyntaxProvider.ForAttributeWithMetadataName(
             DUnionCaseExcludeAttribute,
@@ -31,7 +31,7 @@ internal static class GeneratorOutputs
             }));
     }
 
-    public static void ExplicitNonUnionCases(IncrementalGeneratorInitializationContext context)
+    public static void ExplicitNonUnionCases(CA.IncrementalGeneratorInitializationContext context)
     {
         Report(context, context.SyntaxProvider.ForAttributeWithMetadataName(
             DUnionCaseAttribute,
@@ -47,7 +47,7 @@ internal static class GeneratorOutputs
             }));
     }
 
-    public static void GenericNonUnionCaseTypeParameters(IncrementalGeneratorInitializationContext context)
+    public static void GenericNonUnionCaseTypeParameters(CA.IncrementalGeneratorInitializationContext context)
     {
         Report(context, context.SyntaxProvider.ForAttributeWithMetadataName(
             DUnionGenericAttribute,
@@ -62,14 +62,14 @@ internal static class GeneratorOutputs
                 return report;
             }));
 
-        static bool IsValid(ISymbol symbol)
+        static bool IsValid(CA.ISymbol symbol)
         {
-            return symbol is ITypeParameterSymbol { DeclaringType: { } declaration }
+            return symbol is CA.ITypeParameterSymbol { DeclaringType: { } declaration }
                 && Helpers.IsUnionCase(declaration);
         }
     }
 
-    public static void StaticFiles(IncrementalGeneratorInitializationContext context)
+    public static void StaticFiles(CA.IncrementalGeneratorInitializationContext context)
     {
         context.RegisterPostInitializationOutput(static context =>
         {
@@ -85,7 +85,7 @@ internal static class GeneratorOutputs
         });
     }
 
-    public static void Unions(IncrementalGeneratorInitializationContext context)
+    public static void Unions(CA.IncrementalGeneratorInitializationContext context)
     {
         var unions = context.SyntaxProvider.ForAttributeWithMetadataName(DUnionAttribute, static (_, _) => true, ParseUnionAttribute);
         context.RegisterSourceOutput(unions, ProduceOutputs);
@@ -93,7 +93,7 @@ internal static class GeneratorOutputs
 
     private readonly record struct UnionState(Union? Model, GeneratorContext Context, Models.Location Location);
 
-    private static UnionState ParseUnionAttribute(GeneratorAttributeSyntaxContext context, CancellationToken token)
+    private static UnionState ParseUnionAttribute(CA.GeneratorAttributeSyntaxContext context, CancellationToken token)
     {
         var ctx = new GeneratorContext(context.SemanticModel, token);
         var location = context.TargetNode.GetLocation();
@@ -109,7 +109,7 @@ internal static class GeneratorOutputs
         }
     }
 
-    private static void ProduceOutputs(SourceProductionContext context, UnionState state)
+    private static void ProduceOutputs(CA.SourceProductionContext context, UnionState state)
     {
         try
         {
@@ -129,7 +129,7 @@ internal static class GeneratorOutputs
         }
     }
 
-    private static void Report(IncrementalGeneratorInitializationContext context, IncrementalValuesProvider<GeneratorContext> reporter)
+    private static void Report(CA.IncrementalGeneratorInitializationContext context, CA.IncrementalValuesProvider<GeneratorContext> reporter)
     {
         context.RegisterSourceOutput(reporter, static (ctx, reporter) => reporter.SendDiagnostics(ctx));
     }

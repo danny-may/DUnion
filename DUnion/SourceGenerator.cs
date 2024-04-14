@@ -1,11 +1,11 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using CA = Microsoft.CodeAnalysis;
 
 namespace DUnion;
 
-[Generator]
-internal sealed class SourceGenerator : IIncrementalGenerator
+[CA.Generator]
+internal sealed class SourceGenerator : CA.IIncrementalGenerator
 {
-    public void Initialize(IncrementalGeneratorInitializationContext context)
+    public void Initialize(CA.IncrementalGeneratorInitializationContext context)
     {
         GeneratorOutputs.StaticFiles(context);
         GeneratorOutputs.Unions(context);

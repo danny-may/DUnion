@@ -1,5 +1,4 @@
 ﻿using DUnion.Models;
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using CA = Microsoft.CodeAnalysis;
 
 namespace DUnion;
 
@@ -72,11 +72,11 @@ internal static class UnionTemplate
     {
         return container switch
         {
-            { Kind: TypeKind.Struct, IsRecord: true } => "record struct",
-            { Kind: TypeKind.Struct, IsRecord: false } => "struct",
-            { Kind: TypeKind.Class, IsRecord: true } => "record class",
-            { Kind: TypeKind.Class, IsRecord: false } => "class",
-            { Kind: TypeKind.Interface } => "interface",
+            { Kind: CA.TypeKind.Struct, IsRecord: true } => "record struct",
+            { Kind: CA.TypeKind.Struct, IsRecord: false } => "struct",
+            { Kind: CA.TypeKind.Class, IsRecord: true } => "record class",
+            { Kind: CA.TypeKind.Class, IsRecord: false } => "class",
+            { Kind: CA.TypeKind.Interface } => "interface",
             _ => throw new NotSupportedException($"Unsupported container type {container.Kind}")
         };
     }
@@ -95,7 +95,7 @@ internal static class UnionTemplate
 
         public bool IsRecord { get; }
 
-        public TypeKind Kind { get; }
+        public CA.TypeKind Kind { get; }
 
         public string Name { get; }
 
@@ -139,7 +139,7 @@ internal static class UnionTemplate
             Name = model.Id.Name;
             Kind = model.Definition.Kind;
             IsRecord = model.Definition.IsRecord;
-            IsNonNull = model.Definition.Kind is TypeKind.Struct or TypeKind.Enum;
+            IsNonNull = model.Definition.Kind is CA.TypeKind.Struct or CA.TypeKind.Enum;
             TMatchResult = ComputeMatchResultType(model);
             uint i = 1;
             Cases = model.Cases.Select(c => new UnionCaseRenderContext(this, c, i++)).ToArray();
@@ -369,7 +369,7 @@ internal static class UnionTemplate
                         }
                     }
 
-                    {{(c.Kind is TypeKind.Interface ? "" : $$"""
+                    {{(c.Kind is CA.TypeKind.Interface ? "" : $$"""
                     /// <summary>
                     /// Creates a new instance of the {{DocSee}} class, using a {{c.DocSee}} as its value.
                     /// </summary>
@@ -648,10 +648,10 @@ internal static class UnionTemplate
         private static string GetKindSource(TypeDefinition kind)
         {
             var segments = new List<string>();
-            if (kind.Accessibility is not Accessibility.NotApplicable)
+            if (kind.Accessibility is not CA.Accessibility.NotApplicable)
                 segments.Add(SyntaxFacts.GetText(kind.Accessibility));
 
-            if (kind.Kind == TypeKind.Struct)
+            if (kind.Kind == CA.TypeKind.Struct)
                 segments.Add(SyntaxFacts.GetText(SyntaxKind.ReadOnlyKeyword));
 
             segments.Add(SyntaxFacts.GetText(SyntaxKind.PartialKeyword));
@@ -661,9 +661,9 @@ internal static class UnionTemplate
 
             segments.Add(SyntaxFacts.GetText(kind.Kind switch
             {
-                TypeKind.Struct => SyntaxKind.StructKeyword,
-                TypeKind.Interface => SyntaxKind.InterfaceKeyword,
-                TypeKind.Class => SyntaxKind.ClassKeyword,
+                CA.TypeKind.Struct => SyntaxKind.StructKeyword,
+                CA.TypeKind.Interface => SyntaxKind.InterfaceKeyword,
+                CA.TypeKind.Class => SyntaxKind.ClassKeyword,
                 _ => throw new NotSupportedException($"Unsupported union type kind {kind.Kind}")
             }));
 
@@ -677,15 +677,15 @@ internal static class UnionTemplate
                 .Select(p => $"\r\n    where {p.Name} : {string.Join(", ", p.Constraints)}"));
         }
 
-        private string Cast(string value, string type, TypeKind kind)
+        private string Cast(string value, string type, CA.TypeKind kind)
         {
             if (!_useUnsafe)
                 return $"(({type}){value})";
 
             return kind switch
             {
-                TypeKind.Enum or TypeKind.Struct => $"{_unsafe}.Unbox<{type}>({value}!)",
-                TypeKind.Class or TypeKind.Delegate => $"{_unsafe}.As<{type}>({value})",
+                CA.TypeKind.Enum or CA.TypeKind.Struct => $"{_unsafe}.Unbox<{type}>({value}!)",
+                CA.TypeKind.Class or CA.TypeKind.Delegate => $"{_unsafe}.As<{type}>({value})",
                 _ => $"(({type}){value})",
             };
         }
@@ -705,7 +705,7 @@ internal static class UnionTemplate
 
             public string IsCase { get; }
 
-            public TypeKind Kind { get; }
+            public CA.TypeKind Kind { get; }
 
             public string Name { get; }
 
@@ -733,9 +733,9 @@ internal static class UnionTemplate
                 return Union.Cast(value, TCase, Kind);
             }
 
-            private static bool IsValueType(TypeKind kind)
+            private static bool IsValueType(CA.TypeKind kind)
             {
-                return kind is TypeKind.Struct or TypeKind.Enum;
+                return kind is CA.TypeKind.Struct or CA.TypeKind.Enum;
             }
         }
     }

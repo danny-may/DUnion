@@ -1,9 +1,9 @@
-﻿using Microsoft.CodeAnalysis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Threading;
+using CA = Microsoft.CodeAnalysis;
 
 namespace DUnion.Models;
 
@@ -13,15 +13,15 @@ internal sealed class GeneratorContext : IEquatable<GeneratorContext>
 
     public CancellationToken CancellationToken { get; }
 
-    public SemanticModel Model { get; }
+    public CA.SemanticModel Model { get; }
 
-    public GeneratorContext(SemanticModel model, CancellationToken cancellationToken)
+    public GeneratorContext(CA.SemanticModel model, CancellationToken cancellationToken)
     {
         Model = model;
         CancellationToken = cancellationToken;
     }
 
-    public void AddDiagnostic(DiagnosticDescriptor descriptor, IEnumerable<Location?> locations, IEnumerable<string> messageArgs)
+    public void AddDiagnostic(CA.DiagnosticDescriptor descriptor, IEnumerable<Location?> locations, IEnumerable<string> messageArgs)
     {
         _diagnostics.Add(new(
             descriptor,
@@ -36,7 +36,7 @@ internal sealed class GeneratorContext : IEquatable<GeneratorContext>
             && _diagnostics.ToImmutableHashSet().SetEquals(other._diagnostics);
     }
 
-    public void SendDiagnostics(SourceProductionContext context)
+    public void SendDiagnostics(CA.SourceProductionContext context)
     {
         foreach (var diagnostic in _diagnostics)
         {

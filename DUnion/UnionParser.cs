@@ -1,5 +1,4 @@
 ﻿using DUnion.Models;
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
@@ -8,15 +7,16 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Threading;
 using static DUnion.Models.Constants;
-using Location = DUnion.Models.Location;
+using static Microsoft.CodeAnalysis.CSharpExtensions;
+using CA = Microsoft.CodeAnalysis;
 
 namespace DUnion;
 
 internal static class UnionParser
 {
-    public static Union? Parse(ISymbol symbol, SemanticModel model, AttributeData[] attributes, GeneratorContext context)
+    public static Union? Parse(CA.ISymbol symbol, CA.SemanticModel model, CA.AttributeData[] attributes, GeneratorContext context)
     {
-        if (symbol is not INamedTypeSymbol { TypeKind: TypeKind.Class or TypeKind.Struct } caseHolder)
+        if (symbol is not CA.INamedTypeSymbol { TypeKind: CA.TypeKind.Class or CA.TypeKind.Struct } caseHolder)
         {
             context.AttributeOnlyOnClassOrStruct(DUnionAttribute, attributes);
             return null;
@@ -61,10 +61,10 @@ internal static class UnionParser
         return new(id, definition.TypeDefinition, config, new(cases.Select(c => c.Case)));
     }
 
-    private static Func<ITypeParameterSymbol, string> CreateTypeParameterNameRemapping(INamedTypeSymbol symbol, GeneratorContext context)
+    private static Func<CA.ITypeParameterSymbol, string> CreateTypeParameterNameRemapping(CA.INamedTypeSymbol symbol, GeneratorContext context)
     {
         var typeParameterNameRemapping = symbol.TypeParameters
-            .Select(KeyValuePair<ISymbol, string> (p) =>
+            .Select(KeyValuePair<CA.ISymbol, string> (p) =>
             {
                 var attrs = p.GetAttributes()
                     .Where(attr => attr.AttributeClass?.ToDisplayString() == DUnionGenericAttribute)
@@ -82,12 +82,12 @@ internal static class UnionParser
                     return new(p, name);
                 return new(p, p.Name);
             })
-            .ToImmutableDictionary(SymbolEqualityComparer.Default);
+            .ToImmutableDictionary(CA.SymbolEqualityComparer.Default);
 
         return v => typeParameterNameRemapping.TryGetValue(v, out var name) ? name : v.Name;
     }
 
-    private static string? GetAttributeIdentifierProperty(IReadOnlyDictionary<string, AttributeProperty> properties, string propertyName, GeneratorContext context, out AttributeData? attribute)
+    private static string? GetAttributeIdentifierProperty(IReadOnlyDictionary<string, AttributeProperty> properties, string propertyName, GeneratorContext context, out CA.AttributeData? attribute)
     {
         if (GetAttributeProperty<string>(properties, propertyName, context, out attribute) is not string name)
             return null;
@@ -101,7 +101,7 @@ internal static class UnionParser
         return name;
     }
 
-    private static T? GetAttributeProperty<T>(IReadOnlyDictionary<string, AttributeProperty> properties, string propertyName, GeneratorContext context, out AttributeData? attribute)
+    private static T? GetAttributeProperty<T>(IReadOnlyDictionary<string, AttributeProperty> properties, string propertyName, GeneratorContext context, out CA.AttributeData? attribute)
     {
         if (!properties.TryGetValue(propertyName, out var value))
         {
@@ -114,7 +114,7 @@ internal static class UnionParser
         if (value is { Const.IsNull: true })
             return default;
 
-        if (value is not { Const.Kind: TypedConstantKind.Primitive, Const.Value: T result })
+        if (value is not { Const.Kind: CA.TypedConstantKind.Primitive, Const.Value: T result })
         {
             context.AttributePropertyMustBeSpecificType(attribute!, propertyName, typeof(T));
             return default;
@@ -123,12 +123,12 @@ internal static class UnionParser
         return result;
     }
 
-    private static Sequence<Location> GetLocations(ISymbol symbol)
+    private static Sequence<Location> GetLocations(CA.ISymbol symbol)
     {
         return new(symbol.Locations.Select(Location (l) => l));
     }
 
-    private static IReadOnlyDictionary<string, AttributeProperty> GetProperties(IEnumerable<AttributeData> attributes)
+    private static IReadOnlyDictionary<string, AttributeProperty> GetProperties(IEnumerable<CA.AttributeData> attributes)
     {
         return attributes
             .SelectMany(a => a.NamedArguments, (attr, arg) => (arg.Key, new AttributeProperty(arg.Value, attr)))
@@ -136,7 +136,7 @@ internal static class UnionParser
             .ToImmutableDictionary(g => g.Key, g => g.First().Item2);
     }
 
-    private static bool IsAutoProperty(IPropertySymbol symbol, CancellationToken token)
+    private static bool IsAutoProperty(CA.IPropertySymbol symbol, CancellationToken token)
     {
         return symbol.DeclaringSyntaxReferences
             .Select(r => r.GetSyntax(token))
@@ -145,7 +145,7 @@ internal static class UnionParser
             .Any(a => a is { Body: null, ExpressionBody: null });
     }
 
-    private static bool IsCaseExcluded(ILookup<string?, AttributeData> attributeNameLookup, GeneratorContext context)
+    private static bool IsCaseExcluded(ILookup<string?, CA.AttributeData> attributeNameLookup, GeneratorContext context)
     {
         var excludes = attributeNameLookup[DUnionCaseExcludeAttribute].ToArray();
         if (excludes.Length == 0)
@@ -161,9 +161,9 @@ internal static class UnionParser
         return true;
     }
 
-    private static UnionCaseWithSymbol? ParseCase(INamedTypeSymbol symbol, GeneratorContext context)
+    private static UnionCaseWithSymbol? ParseCase(CA.INamedTypeSymbol symbol, GeneratorContext context)
     {
-        if (symbol is { IsRefLikeType: true, TypeKind: TypeKind.Struct })
+        if (symbol is { IsRefLikeType: true, TypeKind: CA.TypeKind.Struct })
             context.CaseCannotBeARefStruct(symbol);
 
         var attributeNameLookup = symbol.GetAttributes().ToLookup(attr => attr.AttributeClass?.ToDisplayString());
@@ -178,7 +178,7 @@ internal static class UnionParser
         return new(symbol, new(typeId, definition, config));
     }
 
-    private static UnionCaseConfig ParseCaseConfig(string name, AttributeData[] attributes, GeneratorContext context)
+    private static UnionCaseConfig ParseCaseConfig(string name, CA.AttributeData[] attributes, GeneratorContext context)
     {
         var config = new UnionCaseConfig($"Is{name}", $"As{name}OrDefault");
 
@@ -196,7 +196,7 @@ internal static class UnionParser
         return config;
     }
 
-    private static TypeId ParseTypeId(INamedTypeSymbol symbol, Func<ITypeParameterSymbol, string> getSymbolName)
+    private static TypeId ParseTypeId(CA.INamedTypeSymbol symbol, Func<CA.ITypeParameterSymbol, string> getSymbolName)
     {
         var ns = symbol.GetNamespace();
         var containers = new Stack<TypeContainer>();
@@ -216,7 +216,7 @@ internal static class UnionParser
         return new TypeId(ns, new(containers), name, new(typeParameters), GetLocations(symbol));
     }
 
-    private static TypeParameter ParseTypeParameter(ITypeParameterSymbol symbol, Func<ITypeParameterSymbol, string> getSymbolName)
+    private static TypeParameter ParseTypeParameter(CA.ITypeParameterSymbol symbol, Func<CA.ITypeParameterSymbol, string> getSymbolName)
     {
         var constraints = new List<string>();
         if (symbol.HasNotNullConstraint)
@@ -224,7 +224,7 @@ internal static class UnionParser
         if (symbol.HasValueTypeConstraint)
             constraints.Add("struct");
         if (symbol.HasReferenceTypeConstraint)
-            constraints.Add(symbol.ReferenceTypeConstraintNullableAnnotation == NullableAnnotation.Annotated ? "class?" : "class");
+            constraints.Add(symbol.ReferenceTypeConstraintNullableAnnotation == CA.NullableAnnotation.Annotated ? "class?" : "class");
         if (symbol.HasUnmanagedTypeConstraint)
             constraints.Add("unmanaged");
         foreach (var type in symbol.ConstraintTypes)
@@ -234,12 +234,12 @@ internal static class UnionParser
 
         return new(getSymbolName(symbol), new(constraints), GetLocations(symbol));
 
-        string FullyQualifiedName(ITypeSymbol type)
+        string FullyQualifiedName(CA.ITypeSymbol type)
         {
-            if (type is ITypeParameterSymbol parameter)
+            if (type is CA.ITypeParameterSymbol parameter)
                 return getSymbolName(parameter);
 
-            var name = type is INamedTypeSymbol { TypeArguments.Length: > 0 } namedType
+            var name = type is CA.INamedTypeSymbol { TypeArguments.Length: > 0 } namedType
                 ? $"{type.Name}<{string.Join(", ", namedType.TypeArguments.Select(FullyQualifiedName))}>"
                 : type.Name;
 
@@ -251,7 +251,7 @@ internal static class UnionParser
         }
     }
 
-    private static UnionConfig ParseUnionConfig(AttributeData[] attributes, GeneratorContext context)
+    private static UnionConfig ParseUnionConfig(CA.AttributeData[] attributes, GeneratorContext context)
     {
         var result = new UnionConfig("_discriminator", "_value", "Switch", "Match", false);
         if (attributes.Length == 0)
@@ -271,9 +271,9 @@ internal static class UnionParser
     }
 
     private static TypeDefinitionWithSymbol ParseUnionDefinition(
-        INamedTypeSymbol caseHolder,
+        CA.INamedTypeSymbol caseHolder,
         TypeId id,
-        SemanticModel model,
+        CA.SemanticModel model,
         GeneratorContext context)
     {
         if (model.Compilation.GetTypeByMetadataName(Helpers.ToFullName(id)) is { } existingUnion)
@@ -288,19 +288,19 @@ internal static class UnionParser
 
         if (id.TypeParameters.Length != caseHolder.TypeParameters.Length)
         {
-            return new(caseHolder, new(caseHolder.DeclaredAccessibility, TypeKind.Struct, true));
+            return new(caseHolder, new(caseHolder.DeclaredAccessibility, CA.TypeKind.Struct, true));
         }
 
         return new(caseHolder, new(caseHolder.DeclaredAccessibility, caseHolder.TypeKind, caseHolder.IsRecord));
     }
 
-    private static void ReportIllegalBaseType(INamedTypeSymbol union, GeneratorContext context)
+    private static void ReportIllegalBaseType(CA.INamedTypeSymbol union, GeneratorContext context)
     {
-        if (union.BaseType is not { SpecialType: SpecialType.System_Object or SpecialType.System_ValueType })
+        if (union.BaseType is not { SpecialType: CA.SpecialType.System_Object or CA.SpecialType.System_ValueType })
             context.UnionCannotHaveABaseType(union);
     }
 
-    private static void ReportIllegalConstructors(INamedTypeSymbol type, GeneratorContext context)
+    private static void ReportIllegalConstructors(CA.INamedTypeSymbol type, GeneratorContext context)
     {
         foreach (var ctor in type.Constructors
             .Where(ctor => !ctor.IsStatic)
@@ -314,7 +314,7 @@ internal static class UnionParser
         }
     }
 
-    private static void ReportInstanceFields(GeneratorContext context, INamedTypeSymbol union)
+    private static void ReportInstanceFields(GeneratorContext context, CA.INamedTypeSymbol union)
     {
         var members = union
             .GetMembers()
@@ -322,14 +322,14 @@ internal static class UnionParser
             .Where(m => m.DeclaringSyntaxReferences.Length > 0)
             .ToLookup(m => m.Kind);
 
-        foreach (var field in members[SymbolKind.Field].OfType<IFieldSymbol>())
+        foreach (var field in members[CA.SymbolKind.Field].OfType<CA.IFieldSymbol>())
             context.UnionCannotHaveInstanceFields(field);
 
-        foreach (var property in members[SymbolKind.Property].OfType<IPropertySymbol>().Where(x => IsAutoProperty(x, context.CancellationToken)))
+        foreach (var property in members[CA.SymbolKind.Property].OfType<CA.IPropertySymbol>().Where(x => IsAutoProperty(x, context.CancellationToken)))
             context.UnionCannotHaveInstanceAutoProperties(property);
     }
 
-    private static void ReportStaticUnions(INamedTypeSymbol definition, GeneratorContext context, INamedTypeSymbol union)
+    private static void ReportStaticUnions(CA.INamedTypeSymbol definition, GeneratorContext context, CA.INamedTypeSymbol union)
     {
         if (union.IsStatic)
             context.UnionCannotBeStatic(definition);
@@ -344,7 +344,7 @@ internal static class UnionParser
         }
     }
 
-    private record class AttributeProperty(TypedConstant Const, AttributeData Source);
-    private readonly record struct UnionCaseWithSymbol(INamedTypeSymbol Symbol, UnionCase Case);
-    private readonly record struct TypeDefinitionWithSymbol(INamedTypeSymbol Symbol, TypeDefinition TypeDefinition);
+    private record class AttributeProperty(CA.TypedConstant Const, CA.AttributeData Source);
+    private readonly record struct UnionCaseWithSymbol(CA.INamedTypeSymbol Symbol, UnionCase Case);
+    private readonly record struct TypeDefinitionWithSymbol(CA.INamedTypeSymbol Symbol, TypeDefinition TypeDefinition);
 }
