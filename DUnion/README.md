@@ -90,9 +90,21 @@ By default, type parameters with the same name across cases will be merged into 
 [DUnion]
 public static class Result
 {
+    public readonly record struct Ok<TOk>(TOk Value);
+    public readonly record struct Err<TErr>(TErr Error);
+}
+```
+Or, Or, if you want to use the same name for the type parameter on the cases
+```csharp
+[DUnion]
+public static class Result
+{
     public readonly record struct Ok<[DUnionGeneric("TOk")]T>(T Value);
     public readonly record struct Err<[DUnionGeneric("TErr")]T>(T Error);
 }
+```
+Then you can use it like this:
+```csharp
 
 public enum Version 
 {
