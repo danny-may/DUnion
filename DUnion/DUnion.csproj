@@ -7,6 +7,7 @@
     <PackageId>DUnion</PackageId>
     <Description>A source generator for creating discriminated unions by decorating with a [DUnion] attribute</Description>
     <LangVersion>latest</LangVersion>
+    <DevelopmentDependency>true</DevelopmentDependency>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,5 +26,16 @@
   <ItemGroup>
     <EmbeddedResource Include="..\DUnion.Attributes\**\*.cs" />
     <EmbeddedResource Remove="..\DUnion.Attributes\obj\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
