@@ -23983,11 +23983,10 @@ namespace TestCases
         /// <param name="caseICase256">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.ICase256" />.</param>
         /// <param name="caseICase257">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.ICase257" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Union.ICase1>? caseICase1 = null,
             System.Action<TestCases.Union.ICase2>? caseICase2 = null,
             System.Action<TestCases.Union.ICase3>? caseICase3 = null,
@@ -24261,10 +24260,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -24275,10 +24270,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24291,10 +24282,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 4:
@@ -24305,10 +24292,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24321,10 +24304,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 6:
@@ -24335,10 +24314,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24351,10 +24326,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 8:
@@ -24365,10 +24336,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24381,10 +24348,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 10:
@@ -24395,10 +24358,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24411,10 +24370,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 12:
@@ -24425,10 +24380,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24441,10 +24392,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 14:
@@ -24455,10 +24402,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24471,10 +24414,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 16:
@@ -24485,10 +24424,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24501,10 +24436,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 18:
@@ -24515,10 +24446,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24531,10 +24458,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 20:
@@ -24545,10 +24468,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24561,10 +24480,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 22:
@@ -24575,10 +24490,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24591,10 +24502,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 24:
@@ -24605,10 +24512,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24621,10 +24524,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 26:
@@ -24635,10 +24534,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24651,10 +24546,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 28:
@@ -24665,10 +24556,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24681,10 +24568,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 30:
@@ -24695,10 +24578,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24711,10 +24590,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 32:
@@ -24725,10 +24600,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24741,10 +24612,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 34:
@@ -24755,10 +24622,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24771,10 +24634,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 36:
@@ -24785,10 +24644,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24801,10 +24656,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 38:
@@ -24815,10 +24666,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24831,10 +24678,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 40:
@@ -24845,10 +24688,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24861,10 +24700,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 42:
@@ -24875,10 +24710,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24891,10 +24722,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 44:
@@ -24905,10 +24732,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24921,10 +24744,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 46:
@@ -24935,10 +24754,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24951,10 +24766,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 48:
@@ -24965,10 +24776,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -24981,10 +24788,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 50:
@@ -24995,10 +24798,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25011,10 +24810,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 52:
@@ -25025,10 +24820,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25041,10 +24832,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 54:
@@ -25055,10 +24842,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25071,10 +24854,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 56:
@@ -25085,10 +24864,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25101,10 +24876,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 58:
@@ -25115,10 +24886,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25131,10 +24898,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 60:
@@ -25145,10 +24908,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25161,10 +24920,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 62:
@@ -25175,10 +24930,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25191,10 +24942,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 64:
@@ -25205,10 +24952,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25221,10 +24964,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 66:
@@ -25235,10 +24974,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25251,10 +24986,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 68:
@@ -25265,10 +24996,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25281,10 +25008,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 70:
@@ -25295,10 +25018,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25311,10 +25030,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 72:
@@ -25325,10 +25040,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25341,10 +25052,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 74:
@@ -25355,10 +25062,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25371,10 +25074,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 76:
@@ -25385,10 +25084,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25401,10 +25096,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 78:
@@ -25415,10 +25106,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25431,10 +25118,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 80:
@@ -25445,10 +25128,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25461,10 +25140,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 82:
@@ -25475,10 +25150,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25491,10 +25162,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 84:
@@ -25505,10 +25172,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25521,10 +25184,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 86:
@@ -25535,10 +25194,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25551,10 +25206,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 88:
@@ -25565,10 +25216,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25581,10 +25228,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 90:
@@ -25595,10 +25238,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25611,10 +25250,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 92:
@@ -25625,10 +25260,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25641,10 +25272,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 94:
@@ -25655,10 +25282,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25671,10 +25294,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 96:
@@ -25685,10 +25304,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25701,10 +25316,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 98:
@@ -25715,10 +25326,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25731,10 +25338,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 100:
@@ -25745,10 +25348,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25761,10 +25360,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 102:
@@ -25775,10 +25370,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25791,10 +25382,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 104:
@@ -25805,10 +25392,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25821,10 +25404,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 106:
@@ -25835,10 +25414,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25851,10 +25426,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 108:
@@ -25865,10 +25436,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25881,10 +25448,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 110:
@@ -25895,10 +25458,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25911,10 +25470,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 112:
@@ -25925,10 +25480,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25941,10 +25492,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 114:
@@ -25955,10 +25502,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -25971,10 +25514,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 116:
@@ -25985,10 +25524,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26001,10 +25536,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 118:
@@ -26015,10 +25546,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26031,10 +25558,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 120:
@@ -26045,10 +25568,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26061,10 +25580,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 122:
@@ -26075,10 +25590,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26091,10 +25602,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 124:
@@ -26105,10 +25612,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26121,10 +25624,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 126:
@@ -26135,10 +25634,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26151,10 +25646,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 128:
@@ -26165,10 +25656,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26181,10 +25668,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 130:
@@ -26195,10 +25678,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26211,10 +25690,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 132:
@@ -26225,10 +25700,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26241,10 +25712,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 134:
@@ -26255,10 +25722,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26271,10 +25734,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 136:
@@ -26285,10 +25744,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26301,10 +25756,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 138:
@@ -26315,10 +25766,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26331,10 +25778,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 140:
@@ -26345,10 +25788,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26361,10 +25800,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 142:
@@ -26375,10 +25810,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26391,10 +25822,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 144:
@@ -26405,10 +25832,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26421,10 +25844,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 146:
@@ -26435,10 +25854,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26451,10 +25866,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 148:
@@ -26465,10 +25876,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26481,10 +25888,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 150:
@@ -26495,10 +25898,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26511,10 +25910,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 152:
@@ -26525,10 +25920,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26541,10 +25932,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 154:
@@ -26555,10 +25942,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26571,10 +25954,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 156:
@@ -26585,10 +25964,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26601,10 +25976,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 158:
@@ -26615,10 +25986,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26631,10 +25998,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 160:
@@ -26645,10 +26008,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26661,10 +26020,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 162:
@@ -26675,10 +26030,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26691,10 +26042,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 164:
@@ -26705,10 +26052,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26721,10 +26064,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 166:
@@ -26735,10 +26074,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26751,10 +26086,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 168:
@@ -26765,10 +26096,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26781,10 +26108,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 170:
@@ -26795,10 +26118,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26811,10 +26130,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 172:
@@ -26825,10 +26140,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26841,10 +26152,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 174:
@@ -26855,10 +26162,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26871,10 +26174,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 176:
@@ -26885,10 +26184,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26901,10 +26196,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 178:
@@ -26915,10 +26206,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26931,10 +26218,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 180:
@@ -26945,10 +26228,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26961,10 +26240,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 182:
@@ -26975,10 +26250,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -26991,10 +26262,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 184:
@@ -27005,10 +26272,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27021,10 +26284,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 186:
@@ -27035,10 +26294,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27051,10 +26306,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 188:
@@ -27065,10 +26316,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27081,10 +26328,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 190:
@@ -27095,10 +26338,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27111,10 +26350,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 192:
@@ -27125,10 +26360,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27141,10 +26372,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 194:
@@ -27155,10 +26382,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27171,10 +26394,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 196:
@@ -27185,10 +26404,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27201,10 +26416,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 198:
@@ -27215,10 +26426,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27231,10 +26438,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 200:
@@ -27245,10 +26448,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27261,10 +26460,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 202:
@@ -27275,10 +26470,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27291,10 +26482,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 204:
@@ -27305,10 +26492,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27321,10 +26504,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 206:
@@ -27335,10 +26514,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27351,10 +26526,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 208:
@@ -27365,10 +26536,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27381,10 +26548,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 210:
@@ -27395,10 +26558,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27411,10 +26570,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 212:
@@ -27425,10 +26580,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27441,10 +26592,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 214:
@@ -27455,10 +26602,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27471,10 +26614,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 216:
@@ -27485,10 +26624,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27501,10 +26636,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 218:
@@ -27515,10 +26646,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27531,10 +26658,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 220:
@@ -27545,10 +26668,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27561,10 +26680,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 222:
@@ -27575,10 +26690,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27591,10 +26702,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 224:
@@ -27605,10 +26712,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27621,10 +26724,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 226:
@@ -27635,10 +26734,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27651,10 +26746,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 228:
@@ -27665,10 +26756,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27681,10 +26768,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 230:
@@ -27695,10 +26778,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27711,10 +26790,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 232:
@@ -27725,10 +26800,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27741,10 +26812,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 234:
@@ -27755,10 +26822,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27771,10 +26834,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 236:
@@ -27785,10 +26844,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27801,10 +26856,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 238:
@@ -27815,10 +26866,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27831,10 +26878,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 240:
@@ -27845,10 +26888,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27861,10 +26900,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 242:
@@ -27875,10 +26910,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27891,10 +26922,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 244:
@@ -27905,10 +26932,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27921,10 +26944,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 246:
@@ -27935,10 +26954,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27951,10 +26966,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 248:
@@ -27965,10 +26976,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -27981,10 +26988,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 250:
@@ -27995,10 +26998,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -28011,10 +27010,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 252:
@@ -28025,10 +27020,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -28041,10 +27032,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 254:
@@ -28055,10 +27042,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -28071,10 +27054,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 256:
@@ -28086,10 +27065,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 257:
@@ -28100,10 +27075,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -29407,267 +28378,266 @@ namespace TestCases
         /// <param name="caseICase256">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.ICase256" />.</param>
         /// <param name="caseICase257">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.ICase257" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Union.ICase1> caseICase1,
-            System.Action<TestCases.Union.ICase2> caseICase2,
-            System.Action<TestCases.Union.ICase3> caseICase3,
-            System.Action<TestCases.Union.ICase4> caseICase4,
-            System.Action<TestCases.Union.ICase5> caseICase5,
-            System.Action<TestCases.Union.ICase6> caseICase6,
-            System.Action<TestCases.Union.ICase7> caseICase7,
-            System.Action<TestCases.Union.ICase8> caseICase8,
-            System.Action<TestCases.Union.ICase9> caseICase9,
-            System.Action<TestCases.Union.ICase10> caseICase10,
-            System.Action<TestCases.Union.ICase11> caseICase11,
-            System.Action<TestCases.Union.ICase12> caseICase12,
-            System.Action<TestCases.Union.ICase13> caseICase13,
-            System.Action<TestCases.Union.ICase14> caseICase14,
-            System.Action<TestCases.Union.ICase15> caseICase15,
-            System.Action<TestCases.Union.ICase16> caseICase16,
-            System.Action<TestCases.Union.ICase17> caseICase17,
-            System.Action<TestCases.Union.ICase18> caseICase18,
-            System.Action<TestCases.Union.ICase19> caseICase19,
-            System.Action<TestCases.Union.ICase20> caseICase20,
-            System.Action<TestCases.Union.ICase21> caseICase21,
-            System.Action<TestCases.Union.ICase22> caseICase22,
-            System.Action<TestCases.Union.ICase23> caseICase23,
-            System.Action<TestCases.Union.ICase24> caseICase24,
-            System.Action<TestCases.Union.ICase25> caseICase25,
-            System.Action<TestCases.Union.ICase26> caseICase26,
-            System.Action<TestCases.Union.ICase27> caseICase27,
-            System.Action<TestCases.Union.ICase28> caseICase28,
-            System.Action<TestCases.Union.ICase29> caseICase29,
-            System.Action<TestCases.Union.ICase30> caseICase30,
-            System.Action<TestCases.Union.ICase31> caseICase31,
-            System.Action<TestCases.Union.ICase32> caseICase32,
-            System.Action<TestCases.Union.ICase33> caseICase33,
-            System.Action<TestCases.Union.ICase34> caseICase34,
-            System.Action<TestCases.Union.ICase35> caseICase35,
-            System.Action<TestCases.Union.ICase36> caseICase36,
-            System.Action<TestCases.Union.ICase37> caseICase37,
-            System.Action<TestCases.Union.ICase38> caseICase38,
-            System.Action<TestCases.Union.ICase39> caseICase39,
-            System.Action<TestCases.Union.ICase40> caseICase40,
-            System.Action<TestCases.Union.ICase41> caseICase41,
-            System.Action<TestCases.Union.ICase42> caseICase42,
-            System.Action<TestCases.Union.ICase43> caseICase43,
-            System.Action<TestCases.Union.ICase44> caseICase44,
-            System.Action<TestCases.Union.ICase45> caseICase45,
-            System.Action<TestCases.Union.ICase46> caseICase46,
-            System.Action<TestCases.Union.ICase47> caseICase47,
-            System.Action<TestCases.Union.ICase48> caseICase48,
-            System.Action<TestCases.Union.ICase49> caseICase49,
-            System.Action<TestCases.Union.ICase50> caseICase50,
-            System.Action<TestCases.Union.ICase51> caseICase51,
-            System.Action<TestCases.Union.ICase52> caseICase52,
-            System.Action<TestCases.Union.ICase53> caseICase53,
-            System.Action<TestCases.Union.ICase54> caseICase54,
-            System.Action<TestCases.Union.ICase55> caseICase55,
-            System.Action<TestCases.Union.ICase56> caseICase56,
-            System.Action<TestCases.Union.ICase57> caseICase57,
-            System.Action<TestCases.Union.ICase58> caseICase58,
-            System.Action<TestCases.Union.ICase59> caseICase59,
-            System.Action<TestCases.Union.ICase60> caseICase60,
-            System.Action<TestCases.Union.ICase61> caseICase61,
-            System.Action<TestCases.Union.ICase62> caseICase62,
-            System.Action<TestCases.Union.ICase63> caseICase63,
-            System.Action<TestCases.Union.ICase64> caseICase64,
-            System.Action<TestCases.Union.ICase65> caseICase65,
-            System.Action<TestCases.Union.ICase66> caseICase66,
-            System.Action<TestCases.Union.ICase67> caseICase67,
-            System.Action<TestCases.Union.ICase68> caseICase68,
-            System.Action<TestCases.Union.ICase69> caseICase69,
-            System.Action<TestCases.Union.ICase70> caseICase70,
-            System.Action<TestCases.Union.ICase71> caseICase71,
-            System.Action<TestCases.Union.ICase72> caseICase72,
-            System.Action<TestCases.Union.ICase73> caseICase73,
-            System.Action<TestCases.Union.ICase74> caseICase74,
-            System.Action<TestCases.Union.ICase75> caseICase75,
-            System.Action<TestCases.Union.ICase76> caseICase76,
-            System.Action<TestCases.Union.ICase77> caseICase77,
-            System.Action<TestCases.Union.ICase78> caseICase78,
-            System.Action<TestCases.Union.ICase79> caseICase79,
-            System.Action<TestCases.Union.ICase80> caseICase80,
-            System.Action<TestCases.Union.ICase81> caseICase81,
-            System.Action<TestCases.Union.ICase82> caseICase82,
-            System.Action<TestCases.Union.ICase83> caseICase83,
-            System.Action<TestCases.Union.ICase84> caseICase84,
-            System.Action<TestCases.Union.ICase85> caseICase85,
-            System.Action<TestCases.Union.ICase86> caseICase86,
-            System.Action<TestCases.Union.ICase87> caseICase87,
-            System.Action<TestCases.Union.ICase88> caseICase88,
-            System.Action<TestCases.Union.ICase89> caseICase89,
-            System.Action<TestCases.Union.ICase90> caseICase90,
-            System.Action<TestCases.Union.ICase91> caseICase91,
-            System.Action<TestCases.Union.ICase92> caseICase92,
-            System.Action<TestCases.Union.ICase93> caseICase93,
-            System.Action<TestCases.Union.ICase94> caseICase94,
-            System.Action<TestCases.Union.ICase95> caseICase95,
-            System.Action<TestCases.Union.ICase96> caseICase96,
-            System.Action<TestCases.Union.ICase97> caseICase97,
-            System.Action<TestCases.Union.ICase98> caseICase98,
-            System.Action<TestCases.Union.ICase99> caseICase99,
-            System.Action<TestCases.Union.ICase100> caseICase100,
-            System.Action<TestCases.Union.ICase101> caseICase101,
-            System.Action<TestCases.Union.ICase102> caseICase102,
-            System.Action<TestCases.Union.ICase103> caseICase103,
-            System.Action<TestCases.Union.ICase104> caseICase104,
-            System.Action<TestCases.Union.ICase105> caseICase105,
-            System.Action<TestCases.Union.ICase106> caseICase106,
-            System.Action<TestCases.Union.ICase107> caseICase107,
-            System.Action<TestCases.Union.ICase108> caseICase108,
-            System.Action<TestCases.Union.ICase109> caseICase109,
-            System.Action<TestCases.Union.ICase110> caseICase110,
-            System.Action<TestCases.Union.ICase111> caseICase111,
-            System.Action<TestCases.Union.ICase112> caseICase112,
-            System.Action<TestCases.Union.ICase113> caseICase113,
-            System.Action<TestCases.Union.ICase114> caseICase114,
-            System.Action<TestCases.Union.ICase115> caseICase115,
-            System.Action<TestCases.Union.ICase116> caseICase116,
-            System.Action<TestCases.Union.ICase117> caseICase117,
-            System.Action<TestCases.Union.ICase118> caseICase118,
-            System.Action<TestCases.Union.ICase119> caseICase119,
-            System.Action<TestCases.Union.ICase120> caseICase120,
-            System.Action<TestCases.Union.ICase121> caseICase121,
-            System.Action<TestCases.Union.ICase122> caseICase122,
-            System.Action<TestCases.Union.ICase123> caseICase123,
-            System.Action<TestCases.Union.ICase124> caseICase124,
-            System.Action<TestCases.Union.ICase125> caseICase125,
-            System.Action<TestCases.Union.ICase126> caseICase126,
-            System.Action<TestCases.Union.ICase127> caseICase127,
-            System.Action<TestCases.Union.ICase128> caseICase128,
-            System.Action<TestCases.Union.ICase129> caseICase129,
-            System.Action<TestCases.Union.ICase130> caseICase130,
-            System.Action<TestCases.Union.ICase131> caseICase131,
-            System.Action<TestCases.Union.ICase132> caseICase132,
-            System.Action<TestCases.Union.ICase133> caseICase133,
-            System.Action<TestCases.Union.ICase134> caseICase134,
-            System.Action<TestCases.Union.ICase135> caseICase135,
-            System.Action<TestCases.Union.ICase136> caseICase136,
-            System.Action<TestCases.Union.ICase137> caseICase137,
-            System.Action<TestCases.Union.ICase138> caseICase138,
-            System.Action<TestCases.Union.ICase139> caseICase139,
-            System.Action<TestCases.Union.ICase140> caseICase140,
-            System.Action<TestCases.Union.ICase141> caseICase141,
-            System.Action<TestCases.Union.ICase142> caseICase142,
-            System.Action<TestCases.Union.ICase143> caseICase143,
-            System.Action<TestCases.Union.ICase144> caseICase144,
-            System.Action<TestCases.Union.ICase145> caseICase145,
-            System.Action<TestCases.Union.ICase146> caseICase146,
-            System.Action<TestCases.Union.ICase147> caseICase147,
-            System.Action<TestCases.Union.ICase148> caseICase148,
-            System.Action<TestCases.Union.ICase149> caseICase149,
-            System.Action<TestCases.Union.ICase150> caseICase150,
-            System.Action<TestCases.Union.ICase151> caseICase151,
-            System.Action<TestCases.Union.ICase152> caseICase152,
-            System.Action<TestCases.Union.ICase153> caseICase153,
-            System.Action<TestCases.Union.ICase154> caseICase154,
-            System.Action<TestCases.Union.ICase155> caseICase155,
-            System.Action<TestCases.Union.ICase156> caseICase156,
-            System.Action<TestCases.Union.ICase157> caseICase157,
-            System.Action<TestCases.Union.ICase158> caseICase158,
-            System.Action<TestCases.Union.ICase159> caseICase159,
-            System.Action<TestCases.Union.ICase160> caseICase160,
-            System.Action<TestCases.Union.ICase161> caseICase161,
-            System.Action<TestCases.Union.ICase162> caseICase162,
-            System.Action<TestCases.Union.ICase163> caseICase163,
-            System.Action<TestCases.Union.ICase164> caseICase164,
-            System.Action<TestCases.Union.ICase165> caseICase165,
-            System.Action<TestCases.Union.ICase166> caseICase166,
-            System.Action<TestCases.Union.ICase167> caseICase167,
-            System.Action<TestCases.Union.ICase168> caseICase168,
-            System.Action<TestCases.Union.ICase169> caseICase169,
-            System.Action<TestCases.Union.ICase170> caseICase170,
-            System.Action<TestCases.Union.ICase171> caseICase171,
-            System.Action<TestCases.Union.ICase172> caseICase172,
-            System.Action<TestCases.Union.ICase173> caseICase173,
-            System.Action<TestCases.Union.ICase174> caseICase174,
-            System.Action<TestCases.Union.ICase175> caseICase175,
-            System.Action<TestCases.Union.ICase176> caseICase176,
-            System.Action<TestCases.Union.ICase177> caseICase177,
-            System.Action<TestCases.Union.ICase178> caseICase178,
-            System.Action<TestCases.Union.ICase179> caseICase179,
-            System.Action<TestCases.Union.ICase180> caseICase180,
-            System.Action<TestCases.Union.ICase181> caseICase181,
-            System.Action<TestCases.Union.ICase182> caseICase182,
-            System.Action<TestCases.Union.ICase183> caseICase183,
-            System.Action<TestCases.Union.ICase184> caseICase184,
-            System.Action<TestCases.Union.ICase185> caseICase185,
-            System.Action<TestCases.Union.ICase186> caseICase186,
-            System.Action<TestCases.Union.ICase187> caseICase187,
-            System.Action<TestCases.Union.ICase188> caseICase188,
-            System.Action<TestCases.Union.ICase189> caseICase189,
-            System.Action<TestCases.Union.ICase190> caseICase190,
-            System.Action<TestCases.Union.ICase191> caseICase191,
-            System.Action<TestCases.Union.ICase192> caseICase192,
-            System.Action<TestCases.Union.ICase193> caseICase193,
-            System.Action<TestCases.Union.ICase194> caseICase194,
-            System.Action<TestCases.Union.ICase195> caseICase195,
-            System.Action<TestCases.Union.ICase196> caseICase196,
-            System.Action<TestCases.Union.ICase197> caseICase197,
-            System.Action<TestCases.Union.ICase198> caseICase198,
-            System.Action<TestCases.Union.ICase199> caseICase199,
-            System.Action<TestCases.Union.ICase200> caseICase200,
-            System.Action<TestCases.Union.ICase201> caseICase201,
-            System.Action<TestCases.Union.ICase202> caseICase202,
-            System.Action<TestCases.Union.ICase203> caseICase203,
-            System.Action<TestCases.Union.ICase204> caseICase204,
-            System.Action<TestCases.Union.ICase205> caseICase205,
-            System.Action<TestCases.Union.ICase206> caseICase206,
-            System.Action<TestCases.Union.ICase207> caseICase207,
-            System.Action<TestCases.Union.ICase208> caseICase208,
-            System.Action<TestCases.Union.ICase209> caseICase209,
-            System.Action<TestCases.Union.ICase210> caseICase210,
-            System.Action<TestCases.Union.ICase211> caseICase211,
-            System.Action<TestCases.Union.ICase212> caseICase212,
-            System.Action<TestCases.Union.ICase213> caseICase213,
-            System.Action<TestCases.Union.ICase214> caseICase214,
-            System.Action<TestCases.Union.ICase215> caseICase215,
-            System.Action<TestCases.Union.ICase216> caseICase216,
-            System.Action<TestCases.Union.ICase217> caseICase217,
-            System.Action<TestCases.Union.ICase218> caseICase218,
-            System.Action<TestCases.Union.ICase219> caseICase219,
-            System.Action<TestCases.Union.ICase220> caseICase220,
-            System.Action<TestCases.Union.ICase221> caseICase221,
-            System.Action<TestCases.Union.ICase222> caseICase222,
-            System.Action<TestCases.Union.ICase223> caseICase223,
-            System.Action<TestCases.Union.ICase224> caseICase224,
-            System.Action<TestCases.Union.ICase225> caseICase225,
-            System.Action<TestCases.Union.ICase226> caseICase226,
-            System.Action<TestCases.Union.ICase227> caseICase227,
-            System.Action<TestCases.Union.ICase228> caseICase228,
-            System.Action<TestCases.Union.ICase229> caseICase229,
-            System.Action<TestCases.Union.ICase230> caseICase230,
-            System.Action<TestCases.Union.ICase231> caseICase231,
-            System.Action<TestCases.Union.ICase232> caseICase232,
-            System.Action<TestCases.Union.ICase233> caseICase233,
-            System.Action<TestCases.Union.ICase234> caseICase234,
-            System.Action<TestCases.Union.ICase235> caseICase235,
-            System.Action<TestCases.Union.ICase236> caseICase236,
-            System.Action<TestCases.Union.ICase237> caseICase237,
-            System.Action<TestCases.Union.ICase238> caseICase238,
-            System.Action<TestCases.Union.ICase239> caseICase239,
-            System.Action<TestCases.Union.ICase240> caseICase240,
-            System.Action<TestCases.Union.ICase241> caseICase241,
-            System.Action<TestCases.Union.ICase242> caseICase242,
-            System.Action<TestCases.Union.ICase243> caseICase243,
-            System.Action<TestCases.Union.ICase244> caseICase244,
-            System.Action<TestCases.Union.ICase245> caseICase245,
-            System.Action<TestCases.Union.ICase246> caseICase246,
-            System.Action<TestCases.Union.ICase247> caseICase247,
-            System.Action<TestCases.Union.ICase248> caseICase248,
-            System.Action<TestCases.Union.ICase249> caseICase249,
-            System.Action<TestCases.Union.ICase250> caseICase250,
-            System.Action<TestCases.Union.ICase251> caseICase251,
-            System.Action<TestCases.Union.ICase252> caseICase252,
-            System.Action<TestCases.Union.ICase253> caseICase253,
-            System.Action<TestCases.Union.ICase254> caseICase254,
-            System.Action<TestCases.Union.ICase255> caseICase255,
-            System.Action<TestCases.Union.ICase256> caseICase256,
-            System.Action<TestCases.Union.ICase257> caseICase257
+            System.Action<TestCases.Union.ICase1>? caseICase1,
+            System.Action<TestCases.Union.ICase2>? caseICase2,
+            System.Action<TestCases.Union.ICase3>? caseICase3,
+            System.Action<TestCases.Union.ICase4>? caseICase4,
+            System.Action<TestCases.Union.ICase5>? caseICase5,
+            System.Action<TestCases.Union.ICase6>? caseICase6,
+            System.Action<TestCases.Union.ICase7>? caseICase7,
+            System.Action<TestCases.Union.ICase8>? caseICase8,
+            System.Action<TestCases.Union.ICase9>? caseICase9,
+            System.Action<TestCases.Union.ICase10>? caseICase10,
+            System.Action<TestCases.Union.ICase11>? caseICase11,
+            System.Action<TestCases.Union.ICase12>? caseICase12,
+            System.Action<TestCases.Union.ICase13>? caseICase13,
+            System.Action<TestCases.Union.ICase14>? caseICase14,
+            System.Action<TestCases.Union.ICase15>? caseICase15,
+            System.Action<TestCases.Union.ICase16>? caseICase16,
+            System.Action<TestCases.Union.ICase17>? caseICase17,
+            System.Action<TestCases.Union.ICase18>? caseICase18,
+            System.Action<TestCases.Union.ICase19>? caseICase19,
+            System.Action<TestCases.Union.ICase20>? caseICase20,
+            System.Action<TestCases.Union.ICase21>? caseICase21,
+            System.Action<TestCases.Union.ICase22>? caseICase22,
+            System.Action<TestCases.Union.ICase23>? caseICase23,
+            System.Action<TestCases.Union.ICase24>? caseICase24,
+            System.Action<TestCases.Union.ICase25>? caseICase25,
+            System.Action<TestCases.Union.ICase26>? caseICase26,
+            System.Action<TestCases.Union.ICase27>? caseICase27,
+            System.Action<TestCases.Union.ICase28>? caseICase28,
+            System.Action<TestCases.Union.ICase29>? caseICase29,
+            System.Action<TestCases.Union.ICase30>? caseICase30,
+            System.Action<TestCases.Union.ICase31>? caseICase31,
+            System.Action<TestCases.Union.ICase32>? caseICase32,
+            System.Action<TestCases.Union.ICase33>? caseICase33,
+            System.Action<TestCases.Union.ICase34>? caseICase34,
+            System.Action<TestCases.Union.ICase35>? caseICase35,
+            System.Action<TestCases.Union.ICase36>? caseICase36,
+            System.Action<TestCases.Union.ICase37>? caseICase37,
+            System.Action<TestCases.Union.ICase38>? caseICase38,
+            System.Action<TestCases.Union.ICase39>? caseICase39,
+            System.Action<TestCases.Union.ICase40>? caseICase40,
+            System.Action<TestCases.Union.ICase41>? caseICase41,
+            System.Action<TestCases.Union.ICase42>? caseICase42,
+            System.Action<TestCases.Union.ICase43>? caseICase43,
+            System.Action<TestCases.Union.ICase44>? caseICase44,
+            System.Action<TestCases.Union.ICase45>? caseICase45,
+            System.Action<TestCases.Union.ICase46>? caseICase46,
+            System.Action<TestCases.Union.ICase47>? caseICase47,
+            System.Action<TestCases.Union.ICase48>? caseICase48,
+            System.Action<TestCases.Union.ICase49>? caseICase49,
+            System.Action<TestCases.Union.ICase50>? caseICase50,
+            System.Action<TestCases.Union.ICase51>? caseICase51,
+            System.Action<TestCases.Union.ICase52>? caseICase52,
+            System.Action<TestCases.Union.ICase53>? caseICase53,
+            System.Action<TestCases.Union.ICase54>? caseICase54,
+            System.Action<TestCases.Union.ICase55>? caseICase55,
+            System.Action<TestCases.Union.ICase56>? caseICase56,
+            System.Action<TestCases.Union.ICase57>? caseICase57,
+            System.Action<TestCases.Union.ICase58>? caseICase58,
+            System.Action<TestCases.Union.ICase59>? caseICase59,
+            System.Action<TestCases.Union.ICase60>? caseICase60,
+            System.Action<TestCases.Union.ICase61>? caseICase61,
+            System.Action<TestCases.Union.ICase62>? caseICase62,
+            System.Action<TestCases.Union.ICase63>? caseICase63,
+            System.Action<TestCases.Union.ICase64>? caseICase64,
+            System.Action<TestCases.Union.ICase65>? caseICase65,
+            System.Action<TestCases.Union.ICase66>? caseICase66,
+            System.Action<TestCases.Union.ICase67>? caseICase67,
+            System.Action<TestCases.Union.ICase68>? caseICase68,
+            System.Action<TestCases.Union.ICase69>? caseICase69,
+            System.Action<TestCases.Union.ICase70>? caseICase70,
+            System.Action<TestCases.Union.ICase71>? caseICase71,
+            System.Action<TestCases.Union.ICase72>? caseICase72,
+            System.Action<TestCases.Union.ICase73>? caseICase73,
+            System.Action<TestCases.Union.ICase74>? caseICase74,
+            System.Action<TestCases.Union.ICase75>? caseICase75,
+            System.Action<TestCases.Union.ICase76>? caseICase76,
+            System.Action<TestCases.Union.ICase77>? caseICase77,
+            System.Action<TestCases.Union.ICase78>? caseICase78,
+            System.Action<TestCases.Union.ICase79>? caseICase79,
+            System.Action<TestCases.Union.ICase80>? caseICase80,
+            System.Action<TestCases.Union.ICase81>? caseICase81,
+            System.Action<TestCases.Union.ICase82>? caseICase82,
+            System.Action<TestCases.Union.ICase83>? caseICase83,
+            System.Action<TestCases.Union.ICase84>? caseICase84,
+            System.Action<TestCases.Union.ICase85>? caseICase85,
+            System.Action<TestCases.Union.ICase86>? caseICase86,
+            System.Action<TestCases.Union.ICase87>? caseICase87,
+            System.Action<TestCases.Union.ICase88>? caseICase88,
+            System.Action<TestCases.Union.ICase89>? caseICase89,
+            System.Action<TestCases.Union.ICase90>? caseICase90,
+            System.Action<TestCases.Union.ICase91>? caseICase91,
+            System.Action<TestCases.Union.ICase92>? caseICase92,
+            System.Action<TestCases.Union.ICase93>? caseICase93,
+            System.Action<TestCases.Union.ICase94>? caseICase94,
+            System.Action<TestCases.Union.ICase95>? caseICase95,
+            System.Action<TestCases.Union.ICase96>? caseICase96,
+            System.Action<TestCases.Union.ICase97>? caseICase97,
+            System.Action<TestCases.Union.ICase98>? caseICase98,
+            System.Action<TestCases.Union.ICase99>? caseICase99,
+            System.Action<TestCases.Union.ICase100>? caseICase100,
+            System.Action<TestCases.Union.ICase101>? caseICase101,
+            System.Action<TestCases.Union.ICase102>? caseICase102,
+            System.Action<TestCases.Union.ICase103>? caseICase103,
+            System.Action<TestCases.Union.ICase104>? caseICase104,
+            System.Action<TestCases.Union.ICase105>? caseICase105,
+            System.Action<TestCases.Union.ICase106>? caseICase106,
+            System.Action<TestCases.Union.ICase107>? caseICase107,
+            System.Action<TestCases.Union.ICase108>? caseICase108,
+            System.Action<TestCases.Union.ICase109>? caseICase109,
+            System.Action<TestCases.Union.ICase110>? caseICase110,
+            System.Action<TestCases.Union.ICase111>? caseICase111,
+            System.Action<TestCases.Union.ICase112>? caseICase112,
+            System.Action<TestCases.Union.ICase113>? caseICase113,
+            System.Action<TestCases.Union.ICase114>? caseICase114,
+            System.Action<TestCases.Union.ICase115>? caseICase115,
+            System.Action<TestCases.Union.ICase116>? caseICase116,
+            System.Action<TestCases.Union.ICase117>? caseICase117,
+            System.Action<TestCases.Union.ICase118>? caseICase118,
+            System.Action<TestCases.Union.ICase119>? caseICase119,
+            System.Action<TestCases.Union.ICase120>? caseICase120,
+            System.Action<TestCases.Union.ICase121>? caseICase121,
+            System.Action<TestCases.Union.ICase122>? caseICase122,
+            System.Action<TestCases.Union.ICase123>? caseICase123,
+            System.Action<TestCases.Union.ICase124>? caseICase124,
+            System.Action<TestCases.Union.ICase125>? caseICase125,
+            System.Action<TestCases.Union.ICase126>? caseICase126,
+            System.Action<TestCases.Union.ICase127>? caseICase127,
+            System.Action<TestCases.Union.ICase128>? caseICase128,
+            System.Action<TestCases.Union.ICase129>? caseICase129,
+            System.Action<TestCases.Union.ICase130>? caseICase130,
+            System.Action<TestCases.Union.ICase131>? caseICase131,
+            System.Action<TestCases.Union.ICase132>? caseICase132,
+            System.Action<TestCases.Union.ICase133>? caseICase133,
+            System.Action<TestCases.Union.ICase134>? caseICase134,
+            System.Action<TestCases.Union.ICase135>? caseICase135,
+            System.Action<TestCases.Union.ICase136>? caseICase136,
+            System.Action<TestCases.Union.ICase137>? caseICase137,
+            System.Action<TestCases.Union.ICase138>? caseICase138,
+            System.Action<TestCases.Union.ICase139>? caseICase139,
+            System.Action<TestCases.Union.ICase140>? caseICase140,
+            System.Action<TestCases.Union.ICase141>? caseICase141,
+            System.Action<TestCases.Union.ICase142>? caseICase142,
+            System.Action<TestCases.Union.ICase143>? caseICase143,
+            System.Action<TestCases.Union.ICase144>? caseICase144,
+            System.Action<TestCases.Union.ICase145>? caseICase145,
+            System.Action<TestCases.Union.ICase146>? caseICase146,
+            System.Action<TestCases.Union.ICase147>? caseICase147,
+            System.Action<TestCases.Union.ICase148>? caseICase148,
+            System.Action<TestCases.Union.ICase149>? caseICase149,
+            System.Action<TestCases.Union.ICase150>? caseICase150,
+            System.Action<TestCases.Union.ICase151>? caseICase151,
+            System.Action<TestCases.Union.ICase152>? caseICase152,
+            System.Action<TestCases.Union.ICase153>? caseICase153,
+            System.Action<TestCases.Union.ICase154>? caseICase154,
+            System.Action<TestCases.Union.ICase155>? caseICase155,
+            System.Action<TestCases.Union.ICase156>? caseICase156,
+            System.Action<TestCases.Union.ICase157>? caseICase157,
+            System.Action<TestCases.Union.ICase158>? caseICase158,
+            System.Action<TestCases.Union.ICase159>? caseICase159,
+            System.Action<TestCases.Union.ICase160>? caseICase160,
+            System.Action<TestCases.Union.ICase161>? caseICase161,
+            System.Action<TestCases.Union.ICase162>? caseICase162,
+            System.Action<TestCases.Union.ICase163>? caseICase163,
+            System.Action<TestCases.Union.ICase164>? caseICase164,
+            System.Action<TestCases.Union.ICase165>? caseICase165,
+            System.Action<TestCases.Union.ICase166>? caseICase166,
+            System.Action<TestCases.Union.ICase167>? caseICase167,
+            System.Action<TestCases.Union.ICase168>? caseICase168,
+            System.Action<TestCases.Union.ICase169>? caseICase169,
+            System.Action<TestCases.Union.ICase170>? caseICase170,
+            System.Action<TestCases.Union.ICase171>? caseICase171,
+            System.Action<TestCases.Union.ICase172>? caseICase172,
+            System.Action<TestCases.Union.ICase173>? caseICase173,
+            System.Action<TestCases.Union.ICase174>? caseICase174,
+            System.Action<TestCases.Union.ICase175>? caseICase175,
+            System.Action<TestCases.Union.ICase176>? caseICase176,
+            System.Action<TestCases.Union.ICase177>? caseICase177,
+            System.Action<TestCases.Union.ICase178>? caseICase178,
+            System.Action<TestCases.Union.ICase179>? caseICase179,
+            System.Action<TestCases.Union.ICase180>? caseICase180,
+            System.Action<TestCases.Union.ICase181>? caseICase181,
+            System.Action<TestCases.Union.ICase182>? caseICase182,
+            System.Action<TestCases.Union.ICase183>? caseICase183,
+            System.Action<TestCases.Union.ICase184>? caseICase184,
+            System.Action<TestCases.Union.ICase185>? caseICase185,
+            System.Action<TestCases.Union.ICase186>? caseICase186,
+            System.Action<TestCases.Union.ICase187>? caseICase187,
+            System.Action<TestCases.Union.ICase188>? caseICase188,
+            System.Action<TestCases.Union.ICase189>? caseICase189,
+            System.Action<TestCases.Union.ICase190>? caseICase190,
+            System.Action<TestCases.Union.ICase191>? caseICase191,
+            System.Action<TestCases.Union.ICase192>? caseICase192,
+            System.Action<TestCases.Union.ICase193>? caseICase193,
+            System.Action<TestCases.Union.ICase194>? caseICase194,
+            System.Action<TestCases.Union.ICase195>? caseICase195,
+            System.Action<TestCases.Union.ICase196>? caseICase196,
+            System.Action<TestCases.Union.ICase197>? caseICase197,
+            System.Action<TestCases.Union.ICase198>? caseICase198,
+            System.Action<TestCases.Union.ICase199>? caseICase199,
+            System.Action<TestCases.Union.ICase200>? caseICase200,
+            System.Action<TestCases.Union.ICase201>? caseICase201,
+            System.Action<TestCases.Union.ICase202>? caseICase202,
+            System.Action<TestCases.Union.ICase203>? caseICase203,
+            System.Action<TestCases.Union.ICase204>? caseICase204,
+            System.Action<TestCases.Union.ICase205>? caseICase205,
+            System.Action<TestCases.Union.ICase206>? caseICase206,
+            System.Action<TestCases.Union.ICase207>? caseICase207,
+            System.Action<TestCases.Union.ICase208>? caseICase208,
+            System.Action<TestCases.Union.ICase209>? caseICase209,
+            System.Action<TestCases.Union.ICase210>? caseICase210,
+            System.Action<TestCases.Union.ICase211>? caseICase211,
+            System.Action<TestCases.Union.ICase212>? caseICase212,
+            System.Action<TestCases.Union.ICase213>? caseICase213,
+            System.Action<TestCases.Union.ICase214>? caseICase214,
+            System.Action<TestCases.Union.ICase215>? caseICase215,
+            System.Action<TestCases.Union.ICase216>? caseICase216,
+            System.Action<TestCases.Union.ICase217>? caseICase217,
+            System.Action<TestCases.Union.ICase218>? caseICase218,
+            System.Action<TestCases.Union.ICase219>? caseICase219,
+            System.Action<TestCases.Union.ICase220>? caseICase220,
+            System.Action<TestCases.Union.ICase221>? caseICase221,
+            System.Action<TestCases.Union.ICase222>? caseICase222,
+            System.Action<TestCases.Union.ICase223>? caseICase223,
+            System.Action<TestCases.Union.ICase224>? caseICase224,
+            System.Action<TestCases.Union.ICase225>? caseICase225,
+            System.Action<TestCases.Union.ICase226>? caseICase226,
+            System.Action<TestCases.Union.ICase227>? caseICase227,
+            System.Action<TestCases.Union.ICase228>? caseICase228,
+            System.Action<TestCases.Union.ICase229>? caseICase229,
+            System.Action<TestCases.Union.ICase230>? caseICase230,
+            System.Action<TestCases.Union.ICase231>? caseICase231,
+            System.Action<TestCases.Union.ICase232>? caseICase232,
+            System.Action<TestCases.Union.ICase233>? caseICase233,
+            System.Action<TestCases.Union.ICase234>? caseICase234,
+            System.Action<TestCases.Union.ICase235>? caseICase235,
+            System.Action<TestCases.Union.ICase236>? caseICase236,
+            System.Action<TestCases.Union.ICase237>? caseICase237,
+            System.Action<TestCases.Union.ICase238>? caseICase238,
+            System.Action<TestCases.Union.ICase239>? caseICase239,
+            System.Action<TestCases.Union.ICase240>? caseICase240,
+            System.Action<TestCases.Union.ICase241>? caseICase241,
+            System.Action<TestCases.Union.ICase242>? caseICase242,
+            System.Action<TestCases.Union.ICase243>? caseICase243,
+            System.Action<TestCases.Union.ICase244>? caseICase244,
+            System.Action<TestCases.Union.ICase245>? caseICase245,
+            System.Action<TestCases.Union.ICase246>? caseICase246,
+            System.Action<TestCases.Union.ICase247>? caseICase247,
+            System.Action<TestCases.Union.ICase248>? caseICase248,
+            System.Action<TestCases.Union.ICase249>? caseICase249,
+            System.Action<TestCases.Union.ICase250>? caseICase250,
+            System.Action<TestCases.Union.ICase251>? caseICase251,
+            System.Action<TestCases.Union.ICase252>? caseICase252,
+            System.Action<TestCases.Union.ICase253>? caseICase253,
+            System.Action<TestCases.Union.ICase254>? caseICase254,
+            System.Action<TestCases.Union.ICase255>? caseICase255,
+            System.Action<TestCases.Union.ICase256>? caseICase256,
+            System.Action<TestCases.Union.ICase257>? caseICase257
         )
         {
             switch(this._discriminator)
@@ -29680,20 +28650,12 @@ namespace TestCases
                     {
                         caseICase1.Invoke(((TestCases.Union.ICase1)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase1));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseICase2, null))
                     {
                         caseICase2.Invoke(((TestCases.Union.ICase2)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase2));
                     }
                     break;
                 
@@ -29702,20 +28664,12 @@ namespace TestCases
                     {
                         caseICase3.Invoke(((TestCases.Union.ICase3)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase3));
-                    }
                     break;
                 
                 case 4:
                     if (!System.Object.ReferenceEquals(caseICase4, null))
                     {
                         caseICase4.Invoke(((TestCases.Union.ICase4)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase4));
                     }
                     break;
                 
@@ -29724,20 +28678,12 @@ namespace TestCases
                     {
                         caseICase5.Invoke(((TestCases.Union.ICase5)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase5));
-                    }
                     break;
                 
                 case 6:
                     if (!System.Object.ReferenceEquals(caseICase6, null))
                     {
                         caseICase6.Invoke(((TestCases.Union.ICase6)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase6));
                     }
                     break;
                 
@@ -29746,20 +28692,12 @@ namespace TestCases
                     {
                         caseICase7.Invoke(((TestCases.Union.ICase7)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase7));
-                    }
                     break;
                 
                 case 8:
                     if (!System.Object.ReferenceEquals(caseICase8, null))
                     {
                         caseICase8.Invoke(((TestCases.Union.ICase8)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase8));
                     }
                     break;
                 
@@ -29768,20 +28706,12 @@ namespace TestCases
                     {
                         caseICase9.Invoke(((TestCases.Union.ICase9)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase9));
-                    }
                     break;
                 
                 case 10:
                     if (!System.Object.ReferenceEquals(caseICase10, null))
                     {
                         caseICase10.Invoke(((TestCases.Union.ICase10)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase10));
                     }
                     break;
                 
@@ -29790,20 +28720,12 @@ namespace TestCases
                     {
                         caseICase11.Invoke(((TestCases.Union.ICase11)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase11));
-                    }
                     break;
                 
                 case 12:
                     if (!System.Object.ReferenceEquals(caseICase12, null))
                     {
                         caseICase12.Invoke(((TestCases.Union.ICase12)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase12));
                     }
                     break;
                 
@@ -29812,20 +28734,12 @@ namespace TestCases
                     {
                         caseICase13.Invoke(((TestCases.Union.ICase13)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase13));
-                    }
                     break;
                 
                 case 14:
                     if (!System.Object.ReferenceEquals(caseICase14, null))
                     {
                         caseICase14.Invoke(((TestCases.Union.ICase14)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase14));
                     }
                     break;
                 
@@ -29834,20 +28748,12 @@ namespace TestCases
                     {
                         caseICase15.Invoke(((TestCases.Union.ICase15)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase15));
-                    }
                     break;
                 
                 case 16:
                     if (!System.Object.ReferenceEquals(caseICase16, null))
                     {
                         caseICase16.Invoke(((TestCases.Union.ICase16)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase16));
                     }
                     break;
                 
@@ -29856,20 +28762,12 @@ namespace TestCases
                     {
                         caseICase17.Invoke(((TestCases.Union.ICase17)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase17));
-                    }
                     break;
                 
                 case 18:
                     if (!System.Object.ReferenceEquals(caseICase18, null))
                     {
                         caseICase18.Invoke(((TestCases.Union.ICase18)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase18));
                     }
                     break;
                 
@@ -29878,20 +28776,12 @@ namespace TestCases
                     {
                         caseICase19.Invoke(((TestCases.Union.ICase19)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase19));
-                    }
                     break;
                 
                 case 20:
                     if (!System.Object.ReferenceEquals(caseICase20, null))
                     {
                         caseICase20.Invoke(((TestCases.Union.ICase20)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase20));
                     }
                     break;
                 
@@ -29900,20 +28790,12 @@ namespace TestCases
                     {
                         caseICase21.Invoke(((TestCases.Union.ICase21)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase21));
-                    }
                     break;
                 
                 case 22:
                     if (!System.Object.ReferenceEquals(caseICase22, null))
                     {
                         caseICase22.Invoke(((TestCases.Union.ICase22)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase22));
                     }
                     break;
                 
@@ -29922,20 +28804,12 @@ namespace TestCases
                     {
                         caseICase23.Invoke(((TestCases.Union.ICase23)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase23));
-                    }
                     break;
                 
                 case 24:
                     if (!System.Object.ReferenceEquals(caseICase24, null))
                     {
                         caseICase24.Invoke(((TestCases.Union.ICase24)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase24));
                     }
                     break;
                 
@@ -29944,20 +28818,12 @@ namespace TestCases
                     {
                         caseICase25.Invoke(((TestCases.Union.ICase25)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase25));
-                    }
                     break;
                 
                 case 26:
                     if (!System.Object.ReferenceEquals(caseICase26, null))
                     {
                         caseICase26.Invoke(((TestCases.Union.ICase26)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase26));
                     }
                     break;
                 
@@ -29966,20 +28832,12 @@ namespace TestCases
                     {
                         caseICase27.Invoke(((TestCases.Union.ICase27)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase27));
-                    }
                     break;
                 
                 case 28:
                     if (!System.Object.ReferenceEquals(caseICase28, null))
                     {
                         caseICase28.Invoke(((TestCases.Union.ICase28)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase28));
                     }
                     break;
                 
@@ -29988,20 +28846,12 @@ namespace TestCases
                     {
                         caseICase29.Invoke(((TestCases.Union.ICase29)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase29));
-                    }
                     break;
                 
                 case 30:
                     if (!System.Object.ReferenceEquals(caseICase30, null))
                     {
                         caseICase30.Invoke(((TestCases.Union.ICase30)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase30));
                     }
                     break;
                 
@@ -30010,20 +28860,12 @@ namespace TestCases
                     {
                         caseICase31.Invoke(((TestCases.Union.ICase31)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase31));
-                    }
                     break;
                 
                 case 32:
                     if (!System.Object.ReferenceEquals(caseICase32, null))
                     {
                         caseICase32.Invoke(((TestCases.Union.ICase32)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase32));
                     }
                     break;
                 
@@ -30032,20 +28874,12 @@ namespace TestCases
                     {
                         caseICase33.Invoke(((TestCases.Union.ICase33)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase33));
-                    }
                     break;
                 
                 case 34:
                     if (!System.Object.ReferenceEquals(caseICase34, null))
                     {
                         caseICase34.Invoke(((TestCases.Union.ICase34)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase34));
                     }
                     break;
                 
@@ -30054,20 +28888,12 @@ namespace TestCases
                     {
                         caseICase35.Invoke(((TestCases.Union.ICase35)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase35));
-                    }
                     break;
                 
                 case 36:
                     if (!System.Object.ReferenceEquals(caseICase36, null))
                     {
                         caseICase36.Invoke(((TestCases.Union.ICase36)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase36));
                     }
                     break;
                 
@@ -30076,20 +28902,12 @@ namespace TestCases
                     {
                         caseICase37.Invoke(((TestCases.Union.ICase37)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase37));
-                    }
                     break;
                 
                 case 38:
                     if (!System.Object.ReferenceEquals(caseICase38, null))
                     {
                         caseICase38.Invoke(((TestCases.Union.ICase38)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase38));
                     }
                     break;
                 
@@ -30098,20 +28916,12 @@ namespace TestCases
                     {
                         caseICase39.Invoke(((TestCases.Union.ICase39)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase39));
-                    }
                     break;
                 
                 case 40:
                     if (!System.Object.ReferenceEquals(caseICase40, null))
                     {
                         caseICase40.Invoke(((TestCases.Union.ICase40)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase40));
                     }
                     break;
                 
@@ -30120,20 +28930,12 @@ namespace TestCases
                     {
                         caseICase41.Invoke(((TestCases.Union.ICase41)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase41));
-                    }
                     break;
                 
                 case 42:
                     if (!System.Object.ReferenceEquals(caseICase42, null))
                     {
                         caseICase42.Invoke(((TestCases.Union.ICase42)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase42));
                     }
                     break;
                 
@@ -30142,20 +28944,12 @@ namespace TestCases
                     {
                         caseICase43.Invoke(((TestCases.Union.ICase43)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase43));
-                    }
                     break;
                 
                 case 44:
                     if (!System.Object.ReferenceEquals(caseICase44, null))
                     {
                         caseICase44.Invoke(((TestCases.Union.ICase44)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase44));
                     }
                     break;
                 
@@ -30164,20 +28958,12 @@ namespace TestCases
                     {
                         caseICase45.Invoke(((TestCases.Union.ICase45)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase45));
-                    }
                     break;
                 
                 case 46:
                     if (!System.Object.ReferenceEquals(caseICase46, null))
                     {
                         caseICase46.Invoke(((TestCases.Union.ICase46)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase46));
                     }
                     break;
                 
@@ -30186,20 +28972,12 @@ namespace TestCases
                     {
                         caseICase47.Invoke(((TestCases.Union.ICase47)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase47));
-                    }
                     break;
                 
                 case 48:
                     if (!System.Object.ReferenceEquals(caseICase48, null))
                     {
                         caseICase48.Invoke(((TestCases.Union.ICase48)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase48));
                     }
                     break;
                 
@@ -30208,20 +28986,12 @@ namespace TestCases
                     {
                         caseICase49.Invoke(((TestCases.Union.ICase49)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase49));
-                    }
                     break;
                 
                 case 50:
                     if (!System.Object.ReferenceEquals(caseICase50, null))
                     {
                         caseICase50.Invoke(((TestCases.Union.ICase50)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase50));
                     }
                     break;
                 
@@ -30230,20 +29000,12 @@ namespace TestCases
                     {
                         caseICase51.Invoke(((TestCases.Union.ICase51)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase51));
-                    }
                     break;
                 
                 case 52:
                     if (!System.Object.ReferenceEquals(caseICase52, null))
                     {
                         caseICase52.Invoke(((TestCases.Union.ICase52)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase52));
                     }
                     break;
                 
@@ -30252,20 +29014,12 @@ namespace TestCases
                     {
                         caseICase53.Invoke(((TestCases.Union.ICase53)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase53));
-                    }
                     break;
                 
                 case 54:
                     if (!System.Object.ReferenceEquals(caseICase54, null))
                     {
                         caseICase54.Invoke(((TestCases.Union.ICase54)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase54));
                     }
                     break;
                 
@@ -30274,20 +29028,12 @@ namespace TestCases
                     {
                         caseICase55.Invoke(((TestCases.Union.ICase55)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase55));
-                    }
                     break;
                 
                 case 56:
                     if (!System.Object.ReferenceEquals(caseICase56, null))
                     {
                         caseICase56.Invoke(((TestCases.Union.ICase56)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase56));
                     }
                     break;
                 
@@ -30296,20 +29042,12 @@ namespace TestCases
                     {
                         caseICase57.Invoke(((TestCases.Union.ICase57)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase57));
-                    }
                     break;
                 
                 case 58:
                     if (!System.Object.ReferenceEquals(caseICase58, null))
                     {
                         caseICase58.Invoke(((TestCases.Union.ICase58)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase58));
                     }
                     break;
                 
@@ -30318,20 +29056,12 @@ namespace TestCases
                     {
                         caseICase59.Invoke(((TestCases.Union.ICase59)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase59));
-                    }
                     break;
                 
                 case 60:
                     if (!System.Object.ReferenceEquals(caseICase60, null))
                     {
                         caseICase60.Invoke(((TestCases.Union.ICase60)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase60));
                     }
                     break;
                 
@@ -30340,20 +29070,12 @@ namespace TestCases
                     {
                         caseICase61.Invoke(((TestCases.Union.ICase61)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase61));
-                    }
                     break;
                 
                 case 62:
                     if (!System.Object.ReferenceEquals(caseICase62, null))
                     {
                         caseICase62.Invoke(((TestCases.Union.ICase62)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase62));
                     }
                     break;
                 
@@ -30362,20 +29084,12 @@ namespace TestCases
                     {
                         caseICase63.Invoke(((TestCases.Union.ICase63)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase63));
-                    }
                     break;
                 
                 case 64:
                     if (!System.Object.ReferenceEquals(caseICase64, null))
                     {
                         caseICase64.Invoke(((TestCases.Union.ICase64)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase64));
                     }
                     break;
                 
@@ -30384,20 +29098,12 @@ namespace TestCases
                     {
                         caseICase65.Invoke(((TestCases.Union.ICase65)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase65));
-                    }
                     break;
                 
                 case 66:
                     if (!System.Object.ReferenceEquals(caseICase66, null))
                     {
                         caseICase66.Invoke(((TestCases.Union.ICase66)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase66));
                     }
                     break;
                 
@@ -30406,20 +29112,12 @@ namespace TestCases
                     {
                         caseICase67.Invoke(((TestCases.Union.ICase67)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase67));
-                    }
                     break;
                 
                 case 68:
                     if (!System.Object.ReferenceEquals(caseICase68, null))
                     {
                         caseICase68.Invoke(((TestCases.Union.ICase68)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase68));
                     }
                     break;
                 
@@ -30428,20 +29126,12 @@ namespace TestCases
                     {
                         caseICase69.Invoke(((TestCases.Union.ICase69)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase69));
-                    }
                     break;
                 
                 case 70:
                     if (!System.Object.ReferenceEquals(caseICase70, null))
                     {
                         caseICase70.Invoke(((TestCases.Union.ICase70)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase70));
                     }
                     break;
                 
@@ -30450,20 +29140,12 @@ namespace TestCases
                     {
                         caseICase71.Invoke(((TestCases.Union.ICase71)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase71));
-                    }
                     break;
                 
                 case 72:
                     if (!System.Object.ReferenceEquals(caseICase72, null))
                     {
                         caseICase72.Invoke(((TestCases.Union.ICase72)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase72));
                     }
                     break;
                 
@@ -30472,20 +29154,12 @@ namespace TestCases
                     {
                         caseICase73.Invoke(((TestCases.Union.ICase73)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase73));
-                    }
                     break;
                 
                 case 74:
                     if (!System.Object.ReferenceEquals(caseICase74, null))
                     {
                         caseICase74.Invoke(((TestCases.Union.ICase74)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase74));
                     }
                     break;
                 
@@ -30494,20 +29168,12 @@ namespace TestCases
                     {
                         caseICase75.Invoke(((TestCases.Union.ICase75)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase75));
-                    }
                     break;
                 
                 case 76:
                     if (!System.Object.ReferenceEquals(caseICase76, null))
                     {
                         caseICase76.Invoke(((TestCases.Union.ICase76)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase76));
                     }
                     break;
                 
@@ -30516,20 +29182,12 @@ namespace TestCases
                     {
                         caseICase77.Invoke(((TestCases.Union.ICase77)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase77));
-                    }
                     break;
                 
                 case 78:
                     if (!System.Object.ReferenceEquals(caseICase78, null))
                     {
                         caseICase78.Invoke(((TestCases.Union.ICase78)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase78));
                     }
                     break;
                 
@@ -30538,20 +29196,12 @@ namespace TestCases
                     {
                         caseICase79.Invoke(((TestCases.Union.ICase79)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase79));
-                    }
                     break;
                 
                 case 80:
                     if (!System.Object.ReferenceEquals(caseICase80, null))
                     {
                         caseICase80.Invoke(((TestCases.Union.ICase80)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase80));
                     }
                     break;
                 
@@ -30560,20 +29210,12 @@ namespace TestCases
                     {
                         caseICase81.Invoke(((TestCases.Union.ICase81)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase81));
-                    }
                     break;
                 
                 case 82:
                     if (!System.Object.ReferenceEquals(caseICase82, null))
                     {
                         caseICase82.Invoke(((TestCases.Union.ICase82)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase82));
                     }
                     break;
                 
@@ -30582,20 +29224,12 @@ namespace TestCases
                     {
                         caseICase83.Invoke(((TestCases.Union.ICase83)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase83));
-                    }
                     break;
                 
                 case 84:
                     if (!System.Object.ReferenceEquals(caseICase84, null))
                     {
                         caseICase84.Invoke(((TestCases.Union.ICase84)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase84));
                     }
                     break;
                 
@@ -30604,20 +29238,12 @@ namespace TestCases
                     {
                         caseICase85.Invoke(((TestCases.Union.ICase85)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase85));
-                    }
                     break;
                 
                 case 86:
                     if (!System.Object.ReferenceEquals(caseICase86, null))
                     {
                         caseICase86.Invoke(((TestCases.Union.ICase86)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase86));
                     }
                     break;
                 
@@ -30626,20 +29252,12 @@ namespace TestCases
                     {
                         caseICase87.Invoke(((TestCases.Union.ICase87)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase87));
-                    }
                     break;
                 
                 case 88:
                     if (!System.Object.ReferenceEquals(caseICase88, null))
                     {
                         caseICase88.Invoke(((TestCases.Union.ICase88)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase88));
                     }
                     break;
                 
@@ -30648,20 +29266,12 @@ namespace TestCases
                     {
                         caseICase89.Invoke(((TestCases.Union.ICase89)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase89));
-                    }
                     break;
                 
                 case 90:
                     if (!System.Object.ReferenceEquals(caseICase90, null))
                     {
                         caseICase90.Invoke(((TestCases.Union.ICase90)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase90));
                     }
                     break;
                 
@@ -30670,20 +29280,12 @@ namespace TestCases
                     {
                         caseICase91.Invoke(((TestCases.Union.ICase91)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase91));
-                    }
                     break;
                 
                 case 92:
                     if (!System.Object.ReferenceEquals(caseICase92, null))
                     {
                         caseICase92.Invoke(((TestCases.Union.ICase92)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase92));
                     }
                     break;
                 
@@ -30692,20 +29294,12 @@ namespace TestCases
                     {
                         caseICase93.Invoke(((TestCases.Union.ICase93)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase93));
-                    }
                     break;
                 
                 case 94:
                     if (!System.Object.ReferenceEquals(caseICase94, null))
                     {
                         caseICase94.Invoke(((TestCases.Union.ICase94)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase94));
                     }
                     break;
                 
@@ -30714,20 +29308,12 @@ namespace TestCases
                     {
                         caseICase95.Invoke(((TestCases.Union.ICase95)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase95));
-                    }
                     break;
                 
                 case 96:
                     if (!System.Object.ReferenceEquals(caseICase96, null))
                     {
                         caseICase96.Invoke(((TestCases.Union.ICase96)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase96));
                     }
                     break;
                 
@@ -30736,20 +29322,12 @@ namespace TestCases
                     {
                         caseICase97.Invoke(((TestCases.Union.ICase97)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase97));
-                    }
                     break;
                 
                 case 98:
                     if (!System.Object.ReferenceEquals(caseICase98, null))
                     {
                         caseICase98.Invoke(((TestCases.Union.ICase98)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase98));
                     }
                     break;
                 
@@ -30758,20 +29336,12 @@ namespace TestCases
                     {
                         caseICase99.Invoke(((TestCases.Union.ICase99)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase99));
-                    }
                     break;
                 
                 case 100:
                     if (!System.Object.ReferenceEquals(caseICase100, null))
                     {
                         caseICase100.Invoke(((TestCases.Union.ICase100)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase100));
                     }
                     break;
                 
@@ -30780,20 +29350,12 @@ namespace TestCases
                     {
                         caseICase101.Invoke(((TestCases.Union.ICase101)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase101));
-                    }
                     break;
                 
                 case 102:
                     if (!System.Object.ReferenceEquals(caseICase102, null))
                     {
                         caseICase102.Invoke(((TestCases.Union.ICase102)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase102));
                     }
                     break;
                 
@@ -30802,20 +29364,12 @@ namespace TestCases
                     {
                         caseICase103.Invoke(((TestCases.Union.ICase103)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase103));
-                    }
                     break;
                 
                 case 104:
                     if (!System.Object.ReferenceEquals(caseICase104, null))
                     {
                         caseICase104.Invoke(((TestCases.Union.ICase104)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase104));
                     }
                     break;
                 
@@ -30824,20 +29378,12 @@ namespace TestCases
                     {
                         caseICase105.Invoke(((TestCases.Union.ICase105)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase105));
-                    }
                     break;
                 
                 case 106:
                     if (!System.Object.ReferenceEquals(caseICase106, null))
                     {
                         caseICase106.Invoke(((TestCases.Union.ICase106)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase106));
                     }
                     break;
                 
@@ -30846,20 +29392,12 @@ namespace TestCases
                     {
                         caseICase107.Invoke(((TestCases.Union.ICase107)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase107));
-                    }
                     break;
                 
                 case 108:
                     if (!System.Object.ReferenceEquals(caseICase108, null))
                     {
                         caseICase108.Invoke(((TestCases.Union.ICase108)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase108));
                     }
                     break;
                 
@@ -30868,20 +29406,12 @@ namespace TestCases
                     {
                         caseICase109.Invoke(((TestCases.Union.ICase109)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase109));
-                    }
                     break;
                 
                 case 110:
                     if (!System.Object.ReferenceEquals(caseICase110, null))
                     {
                         caseICase110.Invoke(((TestCases.Union.ICase110)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase110));
                     }
                     break;
                 
@@ -30890,20 +29420,12 @@ namespace TestCases
                     {
                         caseICase111.Invoke(((TestCases.Union.ICase111)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase111));
-                    }
                     break;
                 
                 case 112:
                     if (!System.Object.ReferenceEquals(caseICase112, null))
                     {
                         caseICase112.Invoke(((TestCases.Union.ICase112)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase112));
                     }
                     break;
                 
@@ -30912,20 +29434,12 @@ namespace TestCases
                     {
                         caseICase113.Invoke(((TestCases.Union.ICase113)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase113));
-                    }
                     break;
                 
                 case 114:
                     if (!System.Object.ReferenceEquals(caseICase114, null))
                     {
                         caseICase114.Invoke(((TestCases.Union.ICase114)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase114));
                     }
                     break;
                 
@@ -30934,20 +29448,12 @@ namespace TestCases
                     {
                         caseICase115.Invoke(((TestCases.Union.ICase115)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase115));
-                    }
                     break;
                 
                 case 116:
                     if (!System.Object.ReferenceEquals(caseICase116, null))
                     {
                         caseICase116.Invoke(((TestCases.Union.ICase116)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase116));
                     }
                     break;
                 
@@ -30956,20 +29462,12 @@ namespace TestCases
                     {
                         caseICase117.Invoke(((TestCases.Union.ICase117)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase117));
-                    }
                     break;
                 
                 case 118:
                     if (!System.Object.ReferenceEquals(caseICase118, null))
                     {
                         caseICase118.Invoke(((TestCases.Union.ICase118)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase118));
                     }
                     break;
                 
@@ -30978,20 +29476,12 @@ namespace TestCases
                     {
                         caseICase119.Invoke(((TestCases.Union.ICase119)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase119));
-                    }
                     break;
                 
                 case 120:
                     if (!System.Object.ReferenceEquals(caseICase120, null))
                     {
                         caseICase120.Invoke(((TestCases.Union.ICase120)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase120));
                     }
                     break;
                 
@@ -31000,20 +29490,12 @@ namespace TestCases
                     {
                         caseICase121.Invoke(((TestCases.Union.ICase121)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase121));
-                    }
                     break;
                 
                 case 122:
                     if (!System.Object.ReferenceEquals(caseICase122, null))
                     {
                         caseICase122.Invoke(((TestCases.Union.ICase122)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase122));
                     }
                     break;
                 
@@ -31022,20 +29504,12 @@ namespace TestCases
                     {
                         caseICase123.Invoke(((TestCases.Union.ICase123)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase123));
-                    }
                     break;
                 
                 case 124:
                     if (!System.Object.ReferenceEquals(caseICase124, null))
                     {
                         caseICase124.Invoke(((TestCases.Union.ICase124)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase124));
                     }
                     break;
                 
@@ -31044,20 +29518,12 @@ namespace TestCases
                     {
                         caseICase125.Invoke(((TestCases.Union.ICase125)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase125));
-                    }
                     break;
                 
                 case 126:
                     if (!System.Object.ReferenceEquals(caseICase126, null))
                     {
                         caseICase126.Invoke(((TestCases.Union.ICase126)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase126));
                     }
                     break;
                 
@@ -31066,20 +29532,12 @@ namespace TestCases
                     {
                         caseICase127.Invoke(((TestCases.Union.ICase127)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase127));
-                    }
                     break;
                 
                 case 128:
                     if (!System.Object.ReferenceEquals(caseICase128, null))
                     {
                         caseICase128.Invoke(((TestCases.Union.ICase128)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase128));
                     }
                     break;
                 
@@ -31088,20 +29546,12 @@ namespace TestCases
                     {
                         caseICase129.Invoke(((TestCases.Union.ICase129)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase129));
-                    }
                     break;
                 
                 case 130:
                     if (!System.Object.ReferenceEquals(caseICase130, null))
                     {
                         caseICase130.Invoke(((TestCases.Union.ICase130)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase130));
                     }
                     break;
                 
@@ -31110,20 +29560,12 @@ namespace TestCases
                     {
                         caseICase131.Invoke(((TestCases.Union.ICase131)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase131));
-                    }
                     break;
                 
                 case 132:
                     if (!System.Object.ReferenceEquals(caseICase132, null))
                     {
                         caseICase132.Invoke(((TestCases.Union.ICase132)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase132));
                     }
                     break;
                 
@@ -31132,20 +29574,12 @@ namespace TestCases
                     {
                         caseICase133.Invoke(((TestCases.Union.ICase133)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase133));
-                    }
                     break;
                 
                 case 134:
                     if (!System.Object.ReferenceEquals(caseICase134, null))
                     {
                         caseICase134.Invoke(((TestCases.Union.ICase134)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase134));
                     }
                     break;
                 
@@ -31154,20 +29588,12 @@ namespace TestCases
                     {
                         caseICase135.Invoke(((TestCases.Union.ICase135)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase135));
-                    }
                     break;
                 
                 case 136:
                     if (!System.Object.ReferenceEquals(caseICase136, null))
                     {
                         caseICase136.Invoke(((TestCases.Union.ICase136)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase136));
                     }
                     break;
                 
@@ -31176,20 +29602,12 @@ namespace TestCases
                     {
                         caseICase137.Invoke(((TestCases.Union.ICase137)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase137));
-                    }
                     break;
                 
                 case 138:
                     if (!System.Object.ReferenceEquals(caseICase138, null))
                     {
                         caseICase138.Invoke(((TestCases.Union.ICase138)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase138));
                     }
                     break;
                 
@@ -31198,20 +29616,12 @@ namespace TestCases
                     {
                         caseICase139.Invoke(((TestCases.Union.ICase139)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase139));
-                    }
                     break;
                 
                 case 140:
                     if (!System.Object.ReferenceEquals(caseICase140, null))
                     {
                         caseICase140.Invoke(((TestCases.Union.ICase140)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase140));
                     }
                     break;
                 
@@ -31220,20 +29630,12 @@ namespace TestCases
                     {
                         caseICase141.Invoke(((TestCases.Union.ICase141)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase141));
-                    }
                     break;
                 
                 case 142:
                     if (!System.Object.ReferenceEquals(caseICase142, null))
                     {
                         caseICase142.Invoke(((TestCases.Union.ICase142)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase142));
                     }
                     break;
                 
@@ -31242,20 +29644,12 @@ namespace TestCases
                     {
                         caseICase143.Invoke(((TestCases.Union.ICase143)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase143));
-                    }
                     break;
                 
                 case 144:
                     if (!System.Object.ReferenceEquals(caseICase144, null))
                     {
                         caseICase144.Invoke(((TestCases.Union.ICase144)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase144));
                     }
                     break;
                 
@@ -31264,20 +29658,12 @@ namespace TestCases
                     {
                         caseICase145.Invoke(((TestCases.Union.ICase145)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase145));
-                    }
                     break;
                 
                 case 146:
                     if (!System.Object.ReferenceEquals(caseICase146, null))
                     {
                         caseICase146.Invoke(((TestCases.Union.ICase146)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase146));
                     }
                     break;
                 
@@ -31286,20 +29672,12 @@ namespace TestCases
                     {
                         caseICase147.Invoke(((TestCases.Union.ICase147)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase147));
-                    }
                     break;
                 
                 case 148:
                     if (!System.Object.ReferenceEquals(caseICase148, null))
                     {
                         caseICase148.Invoke(((TestCases.Union.ICase148)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase148));
                     }
                     break;
                 
@@ -31308,20 +29686,12 @@ namespace TestCases
                     {
                         caseICase149.Invoke(((TestCases.Union.ICase149)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase149));
-                    }
                     break;
                 
                 case 150:
                     if (!System.Object.ReferenceEquals(caseICase150, null))
                     {
                         caseICase150.Invoke(((TestCases.Union.ICase150)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase150));
                     }
                     break;
                 
@@ -31330,20 +29700,12 @@ namespace TestCases
                     {
                         caseICase151.Invoke(((TestCases.Union.ICase151)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase151));
-                    }
                     break;
                 
                 case 152:
                     if (!System.Object.ReferenceEquals(caseICase152, null))
                     {
                         caseICase152.Invoke(((TestCases.Union.ICase152)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase152));
                     }
                     break;
                 
@@ -31352,20 +29714,12 @@ namespace TestCases
                     {
                         caseICase153.Invoke(((TestCases.Union.ICase153)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase153));
-                    }
                     break;
                 
                 case 154:
                     if (!System.Object.ReferenceEquals(caseICase154, null))
                     {
                         caseICase154.Invoke(((TestCases.Union.ICase154)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase154));
                     }
                     break;
                 
@@ -31374,20 +29728,12 @@ namespace TestCases
                     {
                         caseICase155.Invoke(((TestCases.Union.ICase155)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase155));
-                    }
                     break;
                 
                 case 156:
                     if (!System.Object.ReferenceEquals(caseICase156, null))
                     {
                         caseICase156.Invoke(((TestCases.Union.ICase156)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase156));
                     }
                     break;
                 
@@ -31396,20 +29742,12 @@ namespace TestCases
                     {
                         caseICase157.Invoke(((TestCases.Union.ICase157)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase157));
-                    }
                     break;
                 
                 case 158:
                     if (!System.Object.ReferenceEquals(caseICase158, null))
                     {
                         caseICase158.Invoke(((TestCases.Union.ICase158)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase158));
                     }
                     break;
                 
@@ -31418,20 +29756,12 @@ namespace TestCases
                     {
                         caseICase159.Invoke(((TestCases.Union.ICase159)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase159));
-                    }
                     break;
                 
                 case 160:
                     if (!System.Object.ReferenceEquals(caseICase160, null))
                     {
                         caseICase160.Invoke(((TestCases.Union.ICase160)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase160));
                     }
                     break;
                 
@@ -31440,20 +29770,12 @@ namespace TestCases
                     {
                         caseICase161.Invoke(((TestCases.Union.ICase161)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase161));
-                    }
                     break;
                 
                 case 162:
                     if (!System.Object.ReferenceEquals(caseICase162, null))
                     {
                         caseICase162.Invoke(((TestCases.Union.ICase162)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase162));
                     }
                     break;
                 
@@ -31462,20 +29784,12 @@ namespace TestCases
                     {
                         caseICase163.Invoke(((TestCases.Union.ICase163)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase163));
-                    }
                     break;
                 
                 case 164:
                     if (!System.Object.ReferenceEquals(caseICase164, null))
                     {
                         caseICase164.Invoke(((TestCases.Union.ICase164)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase164));
                     }
                     break;
                 
@@ -31484,20 +29798,12 @@ namespace TestCases
                     {
                         caseICase165.Invoke(((TestCases.Union.ICase165)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase165));
-                    }
                     break;
                 
                 case 166:
                     if (!System.Object.ReferenceEquals(caseICase166, null))
                     {
                         caseICase166.Invoke(((TestCases.Union.ICase166)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase166));
                     }
                     break;
                 
@@ -31506,20 +29812,12 @@ namespace TestCases
                     {
                         caseICase167.Invoke(((TestCases.Union.ICase167)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase167));
-                    }
                     break;
                 
                 case 168:
                     if (!System.Object.ReferenceEquals(caseICase168, null))
                     {
                         caseICase168.Invoke(((TestCases.Union.ICase168)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase168));
                     }
                     break;
                 
@@ -31528,20 +29826,12 @@ namespace TestCases
                     {
                         caseICase169.Invoke(((TestCases.Union.ICase169)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase169));
-                    }
                     break;
                 
                 case 170:
                     if (!System.Object.ReferenceEquals(caseICase170, null))
                     {
                         caseICase170.Invoke(((TestCases.Union.ICase170)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase170));
                     }
                     break;
                 
@@ -31550,20 +29840,12 @@ namespace TestCases
                     {
                         caseICase171.Invoke(((TestCases.Union.ICase171)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase171));
-                    }
                     break;
                 
                 case 172:
                     if (!System.Object.ReferenceEquals(caseICase172, null))
                     {
                         caseICase172.Invoke(((TestCases.Union.ICase172)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase172));
                     }
                     break;
                 
@@ -31572,20 +29854,12 @@ namespace TestCases
                     {
                         caseICase173.Invoke(((TestCases.Union.ICase173)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase173));
-                    }
                     break;
                 
                 case 174:
                     if (!System.Object.ReferenceEquals(caseICase174, null))
                     {
                         caseICase174.Invoke(((TestCases.Union.ICase174)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase174));
                     }
                     break;
                 
@@ -31594,20 +29868,12 @@ namespace TestCases
                     {
                         caseICase175.Invoke(((TestCases.Union.ICase175)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase175));
-                    }
                     break;
                 
                 case 176:
                     if (!System.Object.ReferenceEquals(caseICase176, null))
                     {
                         caseICase176.Invoke(((TestCases.Union.ICase176)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase176));
                     }
                     break;
                 
@@ -31616,20 +29882,12 @@ namespace TestCases
                     {
                         caseICase177.Invoke(((TestCases.Union.ICase177)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase177));
-                    }
                     break;
                 
                 case 178:
                     if (!System.Object.ReferenceEquals(caseICase178, null))
                     {
                         caseICase178.Invoke(((TestCases.Union.ICase178)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase178));
                     }
                     break;
                 
@@ -31638,20 +29896,12 @@ namespace TestCases
                     {
                         caseICase179.Invoke(((TestCases.Union.ICase179)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase179));
-                    }
                     break;
                 
                 case 180:
                     if (!System.Object.ReferenceEquals(caseICase180, null))
                     {
                         caseICase180.Invoke(((TestCases.Union.ICase180)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase180));
                     }
                     break;
                 
@@ -31660,20 +29910,12 @@ namespace TestCases
                     {
                         caseICase181.Invoke(((TestCases.Union.ICase181)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase181));
-                    }
                     break;
                 
                 case 182:
                     if (!System.Object.ReferenceEquals(caseICase182, null))
                     {
                         caseICase182.Invoke(((TestCases.Union.ICase182)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase182));
                     }
                     break;
                 
@@ -31682,20 +29924,12 @@ namespace TestCases
                     {
                         caseICase183.Invoke(((TestCases.Union.ICase183)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase183));
-                    }
                     break;
                 
                 case 184:
                     if (!System.Object.ReferenceEquals(caseICase184, null))
                     {
                         caseICase184.Invoke(((TestCases.Union.ICase184)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase184));
                     }
                     break;
                 
@@ -31704,20 +29938,12 @@ namespace TestCases
                     {
                         caseICase185.Invoke(((TestCases.Union.ICase185)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase185));
-                    }
                     break;
                 
                 case 186:
                     if (!System.Object.ReferenceEquals(caseICase186, null))
                     {
                         caseICase186.Invoke(((TestCases.Union.ICase186)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase186));
                     }
                     break;
                 
@@ -31726,20 +29952,12 @@ namespace TestCases
                     {
                         caseICase187.Invoke(((TestCases.Union.ICase187)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase187));
-                    }
                     break;
                 
                 case 188:
                     if (!System.Object.ReferenceEquals(caseICase188, null))
                     {
                         caseICase188.Invoke(((TestCases.Union.ICase188)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase188));
                     }
                     break;
                 
@@ -31748,20 +29966,12 @@ namespace TestCases
                     {
                         caseICase189.Invoke(((TestCases.Union.ICase189)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase189));
-                    }
                     break;
                 
                 case 190:
                     if (!System.Object.ReferenceEquals(caseICase190, null))
                     {
                         caseICase190.Invoke(((TestCases.Union.ICase190)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase190));
                     }
                     break;
                 
@@ -31770,20 +29980,12 @@ namespace TestCases
                     {
                         caseICase191.Invoke(((TestCases.Union.ICase191)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase191));
-                    }
                     break;
                 
                 case 192:
                     if (!System.Object.ReferenceEquals(caseICase192, null))
                     {
                         caseICase192.Invoke(((TestCases.Union.ICase192)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase192));
                     }
                     break;
                 
@@ -31792,20 +29994,12 @@ namespace TestCases
                     {
                         caseICase193.Invoke(((TestCases.Union.ICase193)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase193));
-                    }
                     break;
                 
                 case 194:
                     if (!System.Object.ReferenceEquals(caseICase194, null))
                     {
                         caseICase194.Invoke(((TestCases.Union.ICase194)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase194));
                     }
                     break;
                 
@@ -31814,20 +30008,12 @@ namespace TestCases
                     {
                         caseICase195.Invoke(((TestCases.Union.ICase195)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase195));
-                    }
                     break;
                 
                 case 196:
                     if (!System.Object.ReferenceEquals(caseICase196, null))
                     {
                         caseICase196.Invoke(((TestCases.Union.ICase196)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase196));
                     }
                     break;
                 
@@ -31836,20 +30022,12 @@ namespace TestCases
                     {
                         caseICase197.Invoke(((TestCases.Union.ICase197)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase197));
-                    }
                     break;
                 
                 case 198:
                     if (!System.Object.ReferenceEquals(caseICase198, null))
                     {
                         caseICase198.Invoke(((TestCases.Union.ICase198)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase198));
                     }
                     break;
                 
@@ -31858,20 +30036,12 @@ namespace TestCases
                     {
                         caseICase199.Invoke(((TestCases.Union.ICase199)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase199));
-                    }
                     break;
                 
                 case 200:
                     if (!System.Object.ReferenceEquals(caseICase200, null))
                     {
                         caseICase200.Invoke(((TestCases.Union.ICase200)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase200));
                     }
                     break;
                 
@@ -31880,20 +30050,12 @@ namespace TestCases
                     {
                         caseICase201.Invoke(((TestCases.Union.ICase201)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase201));
-                    }
                     break;
                 
                 case 202:
                     if (!System.Object.ReferenceEquals(caseICase202, null))
                     {
                         caseICase202.Invoke(((TestCases.Union.ICase202)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase202));
                     }
                     break;
                 
@@ -31902,20 +30064,12 @@ namespace TestCases
                     {
                         caseICase203.Invoke(((TestCases.Union.ICase203)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase203));
-                    }
                     break;
                 
                 case 204:
                     if (!System.Object.ReferenceEquals(caseICase204, null))
                     {
                         caseICase204.Invoke(((TestCases.Union.ICase204)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase204));
                     }
                     break;
                 
@@ -31924,20 +30078,12 @@ namespace TestCases
                     {
                         caseICase205.Invoke(((TestCases.Union.ICase205)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase205));
-                    }
                     break;
                 
                 case 206:
                     if (!System.Object.ReferenceEquals(caseICase206, null))
                     {
                         caseICase206.Invoke(((TestCases.Union.ICase206)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase206));
                     }
                     break;
                 
@@ -31946,20 +30092,12 @@ namespace TestCases
                     {
                         caseICase207.Invoke(((TestCases.Union.ICase207)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase207));
-                    }
                     break;
                 
                 case 208:
                     if (!System.Object.ReferenceEquals(caseICase208, null))
                     {
                         caseICase208.Invoke(((TestCases.Union.ICase208)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase208));
                     }
                     break;
                 
@@ -31968,20 +30106,12 @@ namespace TestCases
                     {
                         caseICase209.Invoke(((TestCases.Union.ICase209)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase209));
-                    }
                     break;
                 
                 case 210:
                     if (!System.Object.ReferenceEquals(caseICase210, null))
                     {
                         caseICase210.Invoke(((TestCases.Union.ICase210)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase210));
                     }
                     break;
                 
@@ -31990,20 +30120,12 @@ namespace TestCases
                     {
                         caseICase211.Invoke(((TestCases.Union.ICase211)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase211));
-                    }
                     break;
                 
                 case 212:
                     if (!System.Object.ReferenceEquals(caseICase212, null))
                     {
                         caseICase212.Invoke(((TestCases.Union.ICase212)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase212));
                     }
                     break;
                 
@@ -32012,20 +30134,12 @@ namespace TestCases
                     {
                         caseICase213.Invoke(((TestCases.Union.ICase213)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase213));
-                    }
                     break;
                 
                 case 214:
                     if (!System.Object.ReferenceEquals(caseICase214, null))
                     {
                         caseICase214.Invoke(((TestCases.Union.ICase214)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase214));
                     }
                     break;
                 
@@ -32034,20 +30148,12 @@ namespace TestCases
                     {
                         caseICase215.Invoke(((TestCases.Union.ICase215)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase215));
-                    }
                     break;
                 
                 case 216:
                     if (!System.Object.ReferenceEquals(caseICase216, null))
                     {
                         caseICase216.Invoke(((TestCases.Union.ICase216)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase216));
                     }
                     break;
                 
@@ -32056,20 +30162,12 @@ namespace TestCases
                     {
                         caseICase217.Invoke(((TestCases.Union.ICase217)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase217));
-                    }
                     break;
                 
                 case 218:
                     if (!System.Object.ReferenceEquals(caseICase218, null))
                     {
                         caseICase218.Invoke(((TestCases.Union.ICase218)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase218));
                     }
                     break;
                 
@@ -32078,20 +30176,12 @@ namespace TestCases
                     {
                         caseICase219.Invoke(((TestCases.Union.ICase219)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase219));
-                    }
                     break;
                 
                 case 220:
                     if (!System.Object.ReferenceEquals(caseICase220, null))
                     {
                         caseICase220.Invoke(((TestCases.Union.ICase220)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase220));
                     }
                     break;
                 
@@ -32100,20 +30190,12 @@ namespace TestCases
                     {
                         caseICase221.Invoke(((TestCases.Union.ICase221)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase221));
-                    }
                     break;
                 
                 case 222:
                     if (!System.Object.ReferenceEquals(caseICase222, null))
                     {
                         caseICase222.Invoke(((TestCases.Union.ICase222)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase222));
                     }
                     break;
                 
@@ -32122,20 +30204,12 @@ namespace TestCases
                     {
                         caseICase223.Invoke(((TestCases.Union.ICase223)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase223));
-                    }
                     break;
                 
                 case 224:
                     if (!System.Object.ReferenceEquals(caseICase224, null))
                     {
                         caseICase224.Invoke(((TestCases.Union.ICase224)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase224));
                     }
                     break;
                 
@@ -32144,20 +30218,12 @@ namespace TestCases
                     {
                         caseICase225.Invoke(((TestCases.Union.ICase225)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase225));
-                    }
                     break;
                 
                 case 226:
                     if (!System.Object.ReferenceEquals(caseICase226, null))
                     {
                         caseICase226.Invoke(((TestCases.Union.ICase226)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase226));
                     }
                     break;
                 
@@ -32166,20 +30232,12 @@ namespace TestCases
                     {
                         caseICase227.Invoke(((TestCases.Union.ICase227)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase227));
-                    }
                     break;
                 
                 case 228:
                     if (!System.Object.ReferenceEquals(caseICase228, null))
                     {
                         caseICase228.Invoke(((TestCases.Union.ICase228)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase228));
                     }
                     break;
                 
@@ -32188,20 +30246,12 @@ namespace TestCases
                     {
                         caseICase229.Invoke(((TestCases.Union.ICase229)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase229));
-                    }
                     break;
                 
                 case 230:
                     if (!System.Object.ReferenceEquals(caseICase230, null))
                     {
                         caseICase230.Invoke(((TestCases.Union.ICase230)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase230));
                     }
                     break;
                 
@@ -32210,20 +30260,12 @@ namespace TestCases
                     {
                         caseICase231.Invoke(((TestCases.Union.ICase231)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase231));
-                    }
                     break;
                 
                 case 232:
                     if (!System.Object.ReferenceEquals(caseICase232, null))
                     {
                         caseICase232.Invoke(((TestCases.Union.ICase232)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase232));
                     }
                     break;
                 
@@ -32232,20 +30274,12 @@ namespace TestCases
                     {
                         caseICase233.Invoke(((TestCases.Union.ICase233)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase233));
-                    }
                     break;
                 
                 case 234:
                     if (!System.Object.ReferenceEquals(caseICase234, null))
                     {
                         caseICase234.Invoke(((TestCases.Union.ICase234)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase234));
                     }
                     break;
                 
@@ -32254,20 +30288,12 @@ namespace TestCases
                     {
                         caseICase235.Invoke(((TestCases.Union.ICase235)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase235));
-                    }
                     break;
                 
                 case 236:
                     if (!System.Object.ReferenceEquals(caseICase236, null))
                     {
                         caseICase236.Invoke(((TestCases.Union.ICase236)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase236));
                     }
                     break;
                 
@@ -32276,20 +30302,12 @@ namespace TestCases
                     {
                         caseICase237.Invoke(((TestCases.Union.ICase237)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase237));
-                    }
                     break;
                 
                 case 238:
                     if (!System.Object.ReferenceEquals(caseICase238, null))
                     {
                         caseICase238.Invoke(((TestCases.Union.ICase238)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase238));
                     }
                     break;
                 
@@ -32298,20 +30316,12 @@ namespace TestCases
                     {
                         caseICase239.Invoke(((TestCases.Union.ICase239)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase239));
-                    }
                     break;
                 
                 case 240:
                     if (!System.Object.ReferenceEquals(caseICase240, null))
                     {
                         caseICase240.Invoke(((TestCases.Union.ICase240)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase240));
                     }
                     break;
                 
@@ -32320,20 +30330,12 @@ namespace TestCases
                     {
                         caseICase241.Invoke(((TestCases.Union.ICase241)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase241));
-                    }
                     break;
                 
                 case 242:
                     if (!System.Object.ReferenceEquals(caseICase242, null))
                     {
                         caseICase242.Invoke(((TestCases.Union.ICase242)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase242));
                     }
                     break;
                 
@@ -32342,20 +30344,12 @@ namespace TestCases
                     {
                         caseICase243.Invoke(((TestCases.Union.ICase243)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase243));
-                    }
                     break;
                 
                 case 244:
                     if (!System.Object.ReferenceEquals(caseICase244, null))
                     {
                         caseICase244.Invoke(((TestCases.Union.ICase244)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase244));
                     }
                     break;
                 
@@ -32364,20 +30358,12 @@ namespace TestCases
                     {
                         caseICase245.Invoke(((TestCases.Union.ICase245)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase245));
-                    }
                     break;
                 
                 case 246:
                     if (!System.Object.ReferenceEquals(caseICase246, null))
                     {
                         caseICase246.Invoke(((TestCases.Union.ICase246)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase246));
                     }
                     break;
                 
@@ -32386,20 +30372,12 @@ namespace TestCases
                     {
                         caseICase247.Invoke(((TestCases.Union.ICase247)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase247));
-                    }
                     break;
                 
                 case 248:
                     if (!System.Object.ReferenceEquals(caseICase248, null))
                     {
                         caseICase248.Invoke(((TestCases.Union.ICase248)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase248));
                     }
                     break;
                 
@@ -32408,20 +30386,12 @@ namespace TestCases
                     {
                         caseICase249.Invoke(((TestCases.Union.ICase249)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase249));
-                    }
                     break;
                 
                 case 250:
                     if (!System.Object.ReferenceEquals(caseICase250, null))
                     {
                         caseICase250.Invoke(((TestCases.Union.ICase250)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase250));
                     }
                     break;
                 
@@ -32430,20 +30400,12 @@ namespace TestCases
                     {
                         caseICase251.Invoke(((TestCases.Union.ICase251)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase251));
-                    }
                     break;
                 
                 case 252:
                     if (!System.Object.ReferenceEquals(caseICase252, null))
                     {
                         caseICase252.Invoke(((TestCases.Union.ICase252)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase252));
                     }
                     break;
                 
@@ -32452,20 +30414,12 @@ namespace TestCases
                     {
                         caseICase253.Invoke(((TestCases.Union.ICase253)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase253));
-                    }
                     break;
                 
                 case 254:
                     if (!System.Object.ReferenceEquals(caseICase254, null))
                     {
                         caseICase254.Invoke(((TestCases.Union.ICase254)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase254));
                     }
                     break;
                 
@@ -32474,10 +30428,6 @@ namespace TestCases
                     {
                         caseICase255.Invoke(((TestCases.Union.ICase255)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase255));
-                    }
                     break;
                 
                 case 256:
@@ -32485,20 +30435,12 @@ namespace TestCases
                     {
                         caseICase256.Invoke(((TestCases.Union.ICase256)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase256));
-                    }
                     break;
                 
                 case 257:
                     if (!System.Object.ReferenceEquals(caseICase257, null))
                     {
                         caseICase257.Invoke(((TestCases.Union.ICase257)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseICase257));
                     }
                     break;
                 

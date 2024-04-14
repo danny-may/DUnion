@@ -965,11 +965,10 @@ namespace TestCases
         /// <param name="caseCase6">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case6" />.</param>
         /// <param name="caseCase7">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case7" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Union.Case1>? caseCase1 = null,
             System.Action<TestCases.Union.Case2>? caseCase2 = null,
             System.Action<TestCases.Union.Case3>? caseCase3 = null,
@@ -993,10 +992,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -1007,10 +1002,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -1023,10 +1014,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 4:
@@ -1037,10 +1024,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -1053,10 +1036,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 6:
@@ -1068,10 +1047,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 7:
@@ -1082,10 +1057,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -1139,17 +1110,16 @@ namespace TestCases
         /// <param name="caseCase6">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case6" />.</param>
         /// <param name="caseCase7">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case7" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Union.Case1> caseCase1,
-            System.Action<TestCases.Union.Case2> caseCase2,
-            System.Action<TestCases.Union.Case3> caseCase3,
-            System.Action<TestCases.Union.Case4> caseCase4,
-            System.Action<TestCases.Union.Case5> caseCase5,
-            System.Action<TestCases.Union.Case6> caseCase6,
-            System.Action<TestCases.Union.Case7> caseCase7
+            System.Action<TestCases.Union.Case1>? caseCase1,
+            System.Action<TestCases.Union.Case2>? caseCase2,
+            System.Action<TestCases.Union.Case3>? caseCase3,
+            System.Action<TestCases.Union.Case4>? caseCase4,
+            System.Action<TestCases.Union.Case5>? caseCase5,
+            System.Action<TestCases.Union.Case6>? caseCase6,
+            System.Action<TestCases.Union.Case7>? caseCase7
         )
         {
             switch(this._discriminator)
@@ -1162,20 +1132,12 @@ namespace TestCases
                     {
                         caseCase1.Invoke(((TestCases.Union.Case1)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase1));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseCase2, null))
                     {
                         caseCase2.Invoke(((TestCases.Union.Case2)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase2));
                     }
                     break;
                 
@@ -1184,20 +1146,12 @@ namespace TestCases
                     {
                         caseCase3.Invoke(((TestCases.Union.Case3)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase3));
-                    }
                     break;
                 
                 case 4:
                     if (!System.Object.ReferenceEquals(caseCase4, null))
                     {
                         caseCase4.Invoke(((TestCases.Union.Case4)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase4));
                     }
                     break;
                 
@@ -1206,10 +1160,6 @@ namespace TestCases
                     {
                         caseCase5.Invoke(((TestCases.Union.Case5)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase5));
-                    }
                     break;
                 
                 case 6:
@@ -1217,20 +1167,12 @@ namespace TestCases
                     {
                         caseCase6.Invoke(((TestCases.Union.Case6)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase6));
-                    }
                     break;
                 
                 case 7:
                     if (!System.Object.ReferenceEquals(caseCase7, null))
                     {
                         caseCase7.Invoke(((TestCases.Union.Case7)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase7));
                     }
                     break;
                 

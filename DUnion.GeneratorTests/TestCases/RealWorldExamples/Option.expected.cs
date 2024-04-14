@@ -320,11 +320,10 @@ namespace TestCases
         /// <param name="caseSome">The delegate to invoke when the <see cref="TestCases.Option{T}" /> represents a <see cref="TestCases.Option.Some{T}" />.</param>
         /// <param name="caseNone">The delegate to invoke when the <see cref="TestCases.Option{T}" /> represents a <see cref="TestCases.Option.None" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Option{T}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Option{T}" /> is a struct and this is the default value of <see cref="TestCases.Option{T}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Option.Some<T>>? caseSome = null,
             System.Action<TestCases.Option.None>? caseNone = null
         )
@@ -343,10 +342,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -357,10 +352,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -389,12 +380,11 @@ namespace TestCases
         /// <param name="caseSome">The delegate to invoke when the <see cref="TestCases.Option{T}" /> represents a <see cref="TestCases.Option.Some{T}" />.</param>
         /// <param name="caseNone">The delegate to invoke when the <see cref="TestCases.Option{T}" /> represents a <see cref="TestCases.Option.None" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Option{T}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Option{T}" /> is a struct and this is the default value of <see cref="TestCases.Option{T}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Option.Some<T>> caseSome,
-            System.Action<TestCases.Option.None> caseNone
+            System.Action<TestCases.Option.Some<T>>? caseSome,
+            System.Action<TestCases.Option.None>? caseNone
         )
         {
             switch(this._discriminator)
@@ -407,20 +397,12 @@ namespace TestCases
                     {
                         caseSome.Invoke(((TestCases.Option.Some<T>)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseSome));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseNone, null))
                     {
                         caseNone.Invoke(((TestCases.Option.None)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseNone));
                     }
                     break;
                 

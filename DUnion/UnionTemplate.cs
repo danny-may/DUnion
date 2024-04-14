@@ -424,12 +424,11 @@ internal static class UnionTemplate
                     /// <param name="case{{c.Name}}">The delegate to invoke when the {{DocSee}} represents a {{c.DocSee}}.</param>
                     """)).Indent(4)}}
                     /// <exception cref="System.InvalidOperationException">Thrown when this {{DocSee}} is not a valid instance. This means that the <see cref="{{Discriminator}}" /> has been tampered with via reflection, or {{DocSee}} is a struct and this is the default value of {{DocSee}}.</exception>
-                    /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
                     [{{_compilerGenerated}}]
                     public void {{Switch}}
                     ({{string.Join(",", Cases
                             .Select(c => $"\r\n{_action}<{c.TCase}>? case{c.Name} = null")
-                            .Prepend($"\r\n{_action} @default")
+                            .Prepend($"\r\n{_action}? @default")
                         ).Indent(8)}}
                     )
                     {
@@ -447,10 +446,6 @@ internal static class UnionTemplate
                                 else if (!{{_object}}.ReferenceEquals(@default, null))
                                 {
                                     @default.Invoke();
-                                }
-                                else
-                                {
-                                    throw new {{_argumentNullException}}(nameof(@default));
                                 }
                                 break;
 
@@ -479,11 +474,10 @@ internal static class UnionTemplate
                     /// <param name="case{{c.Name}}">The delegate to invoke when the {{DocSee}} represents a {{c.DocSee}}.</param>
                     """)).Indent(4)}}
                     /// <exception cref="System.InvalidOperationException">Thrown when this {{DocSee}} is not a valid instance. This means that the <see cref="{{Discriminator}}" /> has been tampered with via reflection, or {{DocSee}} is a struct and this is the default value of {{DocSee}}.</exception>
-                    /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
                     [{{_compilerGenerated}}]
                     public void {{Switch}}
                     ({{string.Join(",", Cases
-                            .Select(c => $"\r\n{_action}<{c.TCase}> case{c.Name}")
+                            .Select(c => $"\r\n{_action}<{c.TCase}>? case{c.Name}")
                         ).Indent(8)}}
                     )
                     {
@@ -497,10 +491,6 @@ internal static class UnionTemplate
                                 if (!{{_object}}.ReferenceEquals(case{{c.Name}}, null))
                                 {
                                     case{{c.Name}}.Invoke({{c.FromObject($"this.{Value}")}});
-                                }
-                                else
-                                {
-                                    throw new {{_argumentNullException}}(nameof(case{{c.Name}}));
                                 }
                                 break;
 

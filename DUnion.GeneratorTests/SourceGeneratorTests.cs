@@ -66,31 +66,6 @@ public partial class SourceGeneratorTests
         }
     }
 
-    [Fact]
-    public void TEST()
-    {
-        RunSourceGenerator("""
-            namespace Testing;
-
-            [DUnion.DUnionAttribute]
-            static class Result
-            {
-                [DUnion.DUnionCaseAttribute(IsCaseName = "IsSuccessful")]
-                public readonly record struct Ok<[DUnion.DUnionGenericAttribute("TOk")]T>(T Value);
-
-                [DUnion.DUnionCaseAttribute(IsCaseName = "IsErrored")]
-                public readonly record struct Err<[DUnion.DUnionGenericAttribute("TError")]T>(T Error);
-            }
-
-            public partial class Result<TOk, TError>
-            {
-                public Result() : this(0, null)
-                {
-                }
-            }
-            """);
-    }
-
     private static void AssertNoDiff(string actual, string expected)
     {
         var diff = InlineDiffBuilder.Diff(expected, actual);

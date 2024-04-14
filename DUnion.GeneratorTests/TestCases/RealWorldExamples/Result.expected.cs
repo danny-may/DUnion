@@ -320,11 +320,10 @@ namespace TestCases
         /// <param name="caseOk">The delegate to invoke when the <see cref="TestCases.Result{TOk, TErr}" /> represents a <see cref="TestCases.Result.Ok{TOk}" />.</param>
         /// <param name="caseErr">The delegate to invoke when the <see cref="TestCases.Result{TOk, TErr}" /> represents a <see cref="TestCases.Result.Err{TErr}" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Result{TOk, TErr}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Result{TOk, TErr}" /> is a struct and this is the default value of <see cref="TestCases.Result{TOk, TErr}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Result.Ok<TOk>>? caseOk = null,
             System.Action<TestCases.Result.Err<TErr>>? caseErr = null
         )
@@ -343,10 +342,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -357,10 +352,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -389,12 +380,11 @@ namespace TestCases
         /// <param name="caseOk">The delegate to invoke when the <see cref="TestCases.Result{TOk, TErr}" /> represents a <see cref="TestCases.Result.Ok{TOk}" />.</param>
         /// <param name="caseErr">The delegate to invoke when the <see cref="TestCases.Result{TOk, TErr}" /> represents a <see cref="TestCases.Result.Err{TErr}" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Result{TOk, TErr}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Result{TOk, TErr}" /> is a struct and this is the default value of <see cref="TestCases.Result{TOk, TErr}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Result.Ok<TOk>> caseOk,
-            System.Action<TestCases.Result.Err<TErr>> caseErr
+            System.Action<TestCases.Result.Ok<TOk>>? caseOk,
+            System.Action<TestCases.Result.Err<TErr>>? caseErr
         )
         {
             switch(this._discriminator)
@@ -407,20 +397,12 @@ namespace TestCases
                     {
                         caseOk.Invoke(((TestCases.Result.Ok<TOk>)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseOk));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseErr, null))
                     {
                         caseErr.Invoke(((TestCases.Result.Err<TErr>)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseErr));
                     }
                     break;
                 

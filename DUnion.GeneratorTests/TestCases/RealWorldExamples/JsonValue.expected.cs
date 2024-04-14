@@ -796,11 +796,10 @@ namespace TestCases
         /// <param name="caseArray">The delegate to invoke when the <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Array" />.</param>
         /// <param name="caseObject">The delegate to invoke when the <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Object" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.JsonValue" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.JsonValue" /> is a struct and this is the default value of <see cref="TestCases.JsonValue" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.JsonValue.String>? caseString = null,
             System.Action<TestCases.JsonValue.Number>? caseNumber = null,
             System.Action<TestCases.JsonValue.Boolean>? caseBoolean = null,
@@ -823,10 +822,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -837,10 +832,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -853,10 +844,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 4:
@@ -867,10 +854,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -883,10 +866,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 6:
@@ -897,10 +876,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -949,16 +924,15 @@ namespace TestCases
         /// <param name="caseArray">The delegate to invoke when the <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Array" />.</param>
         /// <param name="caseObject">The delegate to invoke when the <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Object" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.JsonValue" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.JsonValue" /> is a struct and this is the default value of <see cref="TestCases.JsonValue" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.JsonValue.String> caseString,
-            System.Action<TestCases.JsonValue.Number> caseNumber,
-            System.Action<TestCases.JsonValue.Boolean> caseBoolean,
-            System.Action<TestCases.JsonValue.Null> caseNull,
-            System.Action<TestCases.JsonValue.Array> caseArray,
-            System.Action<TestCases.JsonValue.Object> caseObject
+            System.Action<TestCases.JsonValue.String>? caseString,
+            System.Action<TestCases.JsonValue.Number>? caseNumber,
+            System.Action<TestCases.JsonValue.Boolean>? caseBoolean,
+            System.Action<TestCases.JsonValue.Null>? caseNull,
+            System.Action<TestCases.JsonValue.Array>? caseArray,
+            System.Action<TestCases.JsonValue.Object>? caseObject
         )
         {
             switch(this._discriminator)
@@ -971,20 +945,12 @@ namespace TestCases
                     {
                         caseString.Invoke(((TestCases.JsonValue.String)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseString));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseNumber, null))
                     {
                         caseNumber.Invoke(((TestCases.JsonValue.Number)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseNumber));
                     }
                     break;
                 
@@ -993,20 +959,12 @@ namespace TestCases
                     {
                         caseBoolean.Invoke(((TestCases.JsonValue.Boolean)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseBoolean));
-                    }
                     break;
                 
                 case 4:
                     if (!System.Object.ReferenceEquals(caseNull, null))
                     {
                         caseNull.Invoke(((TestCases.JsonValue.Null)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseNull));
                     }
                     break;
                 
@@ -1015,20 +973,12 @@ namespace TestCases
                     {
                         caseArray.Invoke(((TestCases.JsonValue.Array)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseArray));
-                    }
                     break;
                 
                 case 6:
                     if (!System.Object.ReferenceEquals(caseObject, null))
                     {
                         caseObject.Invoke(((TestCases.JsonValue.Object)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseObject));
                     }
                     break;
                 

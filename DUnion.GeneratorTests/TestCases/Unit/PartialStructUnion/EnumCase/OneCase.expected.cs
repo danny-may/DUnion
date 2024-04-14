@@ -261,11 +261,10 @@ namespace TestCases
         /// <param name="default"></param>
         /// <param name="caseCase1">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case1" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Union.Case1>? caseCase1 = null
         )
         {
@@ -282,10 +281,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -309,11 +304,10 @@ namespace TestCases
         /// </summary>
         /// <param name="caseCase1">The delegate to invoke when the <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case1" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union" /> is a struct and this is the default value of <see cref="TestCases.Union" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Union.Case1> caseCase1
+            System.Action<TestCases.Union.Case1>? caseCase1
         )
         {
             switch(this._discriminator)
@@ -325,10 +319,6 @@ namespace TestCases
                     if (!System.Object.ReferenceEquals(caseCase1, null))
                     {
                         caseCase1.Invoke(((TestCases.Union.Case1)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase1));
                     }
                     break;
                 

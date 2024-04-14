@@ -511,15 +511,15 @@ public static class JsonValueTests
         new JsonValue.Object(_object),
     };
 
-    public static TheoryData<JsonValue> Switch_WithDefault_NullSelector_NullDefault_Data => new()
+    public static TheoryData<JsonValue, string> Switch_WithDefault_NullSelector_NullDefault_Data => new()
     {
-        new JsonValue.Null(),
-        new JsonValue.String("abc"),
-        new JsonValue.Number(1234),
-        new JsonValue.Boolean(true),
-        new JsonValue.Boolean(false),
-        new JsonValue.Array(_array),
-        new JsonValue.Object(_object),
+        { new JsonValue.Null(), "caseNull" },
+        { new JsonValue.String("abc"), "caseString" },
+        { new JsonValue.Number(1234), "caseNumber" },
+        { new JsonValue.Boolean(true), "caseBoolean" },
+        { new JsonValue.Boolean(false), "caseBoolean" },
+        { new JsonValue.Array(_array), "caseArray" },
+        { new JsonValue.Object(_object), "caseObject" },
     };
 
     [Theory]
@@ -1200,19 +1200,19 @@ public static class JsonValueTests
     public static void Switch_NoDefault_NullSelector(JsonValue sut, string parameter)
     {
         // arrange
+        var actual = null as V<object?>?;
 
         // act
-        var actual = Assert.Throws<ArgumentNullException>(() => sut.Switch(
-            caseString: null!,
-            caseNumber: null!,
-            caseBoolean: null!,
-            caseNull: null!,
-            caseArray: null!,
-            caseObject: null!));
+        sut.Switch(
+            caseString: parameter == "caseString" ? null : v => actual = new(v.Value),
+            caseNumber: parameter == "caseNumber" ? null : v => actual = new(v.Value),
+            caseBoolean: parameter == "caseBoolean" ? null : v => actual = new(v.Value),
+            caseNull: parameter == "caseNull" ? null : v => actual = new(null),
+            caseArray: parameter == "caseArray" ? null : v => actual = new(v.Values),
+            caseObject: parameter == "caseObject" ? null : v => actual = new(v.Properties));
 
         // assert
-        actual.ParamName.Should().Be(parameter);
-        actual.Message.Should().Be($"Value cannot be null. (Parameter '{parameter}')");
+        actual.Should().BeNull();
     }
 
     [Fact]
@@ -1310,16 +1310,23 @@ public static class JsonValueTests
 
     [Theory]
     [MemberData(nameof(Switch_WithDefault_NullSelector_NullDefault_Data))]
-    public static void Switch_WithDefault_NullSelector_NullDefault(JsonValue sut)
+    public static void Switch_WithDefault_NullSelector_NullDefault(JsonValue sut, string parameter)
     {
         // arrange
+        var actual = null as V<object?>?;
 
         // act
-        var actual = Assert.Throws<ArgumentNullException>(() => sut.Switch(@default: null!));
+        sut.Switch(
+            caseString: parameter == "caseString" ? null : v => actual = new(v.Value),
+            caseNumber: parameter == "caseNumber" ? null : v => actual = new(v.Value),
+            caseBoolean: parameter == "caseBoolean" ? null : v => actual = new(v.Value),
+            caseNull: parameter == "caseNull" ? null : v => actual = new(null),
+            caseArray: parameter == "caseArray" ? null : v => actual = new(v.Values),
+            caseObject: parameter == "caseObject" ? null : v => actual = new(v.Properties),
+            @default: null);
 
         // assert
-        actual.ParamName.Should().Be("default");
-        actual.Message.Should().Be($"Value cannot be null. (Parameter 'default')");
+        actual.Should().BeNull();
     }
 
     [Fact]

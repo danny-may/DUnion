@@ -322,11 +322,10 @@ namespace TestCases
         /// <param name="caseCase1">The delegate to invoke when the <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case1{T1}" />.</param>
         /// <param name="caseCase2">The delegate to invoke when the <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case2{T2}" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union{T1, T2}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union{T1, T2}" /> is a struct and this is the default value of <see cref="TestCases.Union{T1, T2}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when both the delegate that should have been invoked and <paramref name="default" /> are null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action @default,
+            System.Action? @default,
             System.Action<TestCases.Union.Case1<T1>>? caseCase1 = null,
             System.Action<TestCases.Union.Case2<T2>>? caseCase2 = null
         )
@@ -345,10 +344,6 @@ namespace TestCases
                     {
                         @default.Invoke();
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
-                    }
                     break;
                 
                 case 2:
@@ -359,10 +354,6 @@ namespace TestCases
                     else if (!System.Object.ReferenceEquals(@default, null))
                     {
                         @default.Invoke();
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(@default));
                     }
                     break;
                 
@@ -391,12 +382,11 @@ namespace TestCases
         /// <param name="caseCase1">The delegate to invoke when the <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case1{T1}" />.</param>
         /// <param name="caseCase2">The delegate to invoke when the <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case2{T2}" />.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when this <see cref="TestCases.Union{T1, T2}" /> is not a valid instance. This means that the <see cref="_discriminator" /> has been tampered with via reflection, or <see cref="TestCases.Union{T1, T2}" /> is a struct and this is the default value of <see cref="TestCases.Union{T1, T2}" />.</exception>
-        /// <exception cref="System.ArgumentNullException">Thrown when the delegate that should have been invoked is null.</exception>
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
         public void Switch
         (
-            System.Action<TestCases.Union.Case1<T1>> caseCase1,
-            System.Action<TestCases.Union.Case2<T2>> caseCase2
+            System.Action<TestCases.Union.Case1<T1>>? caseCase1,
+            System.Action<TestCases.Union.Case2<T2>>? caseCase2
         )
         {
             switch(this._discriminator)
@@ -409,20 +399,12 @@ namespace TestCases
                     {
                         caseCase1.Invoke(((TestCases.Union.Case1<T1>)this._value));
                     }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase1));
-                    }
                     break;
                 
                 case 2:
                     if (!System.Object.ReferenceEquals(caseCase2, null))
                     {
                         caseCase2.Invoke(((TestCases.Union.Case2<T2>)this._value));
-                    }
-                    else
-                    {
-                        throw new System.ArgumentNullException(nameof(caseCase2));
                     }
                     break;
                 
