@@ -361,7 +361,7 @@ NOTE: Conversions to and from an interface cannot be defined, so if a case is an
 
 ## Fields
 
-There are two `private readonly` fields located on the union instances. These fields generally should not be used for anything, but you can expose them through some readonly properties if you wish.
+There are two `private readonly` fields located on the union instances. These fields generally should not be used for anything, but you can expose them through some readonly properties if you wish. I would advise not attepting to set these values yourself, for reasons detailed below.
 
 ### `byte _discriminator`
 
@@ -409,11 +409,11 @@ public readonly record struct MyUnion
 
 # Type safety
 
-Due to the way c# works, under the hood all cases are stored in the `object? _value` field in the union. Converting to or from a strongly typed case to `object?` can be an expensive process, especially if the case is a value type like a `struct` or `enum`. To speed things up a bit, there is an opt-in way to leverage the `System.Runtime.CompilerServices.Unsafe` class. This class allows us to skip a lot of the slow type checks when converting from `object?` to the strongly typed cases. Under normal usage of the unions, this is a safe process as all types are strongly checked before writing to the `_value` field. This means it is safe to enable the usage of the `Unsafe` class in almost all situations.
+Due to the way c# works, under the hood all cases are stored in the [`object? _value`](#object-_value) field in the union. Converting to or from a strongly typed case to `object?` takes time, especially if the case is a value type like a `struct` or `enum`. To squeeze as much speed out of the union, there is an opt-in way to leverage the `System.Runtime.CompilerServices.Unsafe` class. This class allows us to skip a lot of the "slow" type checks when converting from `object?` to the strongly typed cases. Under normal usage of the unions, this is a safe process as all types are strongly checked before writing to the [`_value`](#object-_value) field. This means it is safe to enable the usage of the `Unsafe` class in almost all situations.
 
 `UseUnsafe` is turned off by default simply to reduce the chance of things being broken without realising, as it effectively turns off some normally unneeded checks. If you are having performance issues, and have identified that this will help alleviate them, and you have checked it is safe to do so, then feel free to turn this feature on at a per-union level.
 
-If, however, any method is used to modify or set the `_value` or `_discriminator` fields yourself, then you must also maintain these checks yourself to ensure that the values at runtime are correctly set. 
+If, however, any method is used to modify or set the [`_value`](#object-_value) or [`_discriminator`](#byte-_discriminator) fields yourself, then you must also maintain these checks yourself to ensure that the values at runtime are correctly set. 
 
 
 ```csharp

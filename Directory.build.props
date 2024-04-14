@@ -1,11 +1,33 @@
 <Project>
   <PropertyGroup>
     <Authors>danny-may</Authors>
+    <Copyright>Copyright © Danny May</Copyright>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/danny-may/DUnion</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/danny-may/DUnion</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>union;discriminated union;tagged union;source generator</PackageTags>
+    <PackageTags>discriminatedunion taggedunion union sourcegenerator codegenerator sourcegen codegen attribute</PackageTags>
     <Version>$(VersionPrefix)$(VersionSuffix)</Version>
+    <VersionPrefix>1.0.0</VersionPrefix>
     <VersionSuffix>build-$([System.DateTime]::Now.ToString("yyyyMMddHHmmss"))</VersionSuffix>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <DebugType>embedded</DebugType>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)\artifacts</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(ProjectDir)\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
 </Project>
