@@ -21,7 +21,7 @@ internal sealed class GeneratorContext : IEquatable<GeneratorContext>
         CancellationToken = cancellationToken;
     }
 
-    public void AddDiagnostics(DiagnosticDescriptor descriptor, IEnumerable<Location?> locations, IEnumerable<string> messageArgs)
+    public void AddDiagnostic(DiagnosticDescriptor descriptor, IEnumerable<Location?> locations, IEnumerable<string> messageArgs)
     {
         _diagnostics.Add(new(
             descriptor,

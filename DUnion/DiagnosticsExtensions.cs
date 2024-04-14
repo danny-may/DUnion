@@ -158,7 +158,7 @@ internal static class DiagnosticsExtensions
 
     public static void AttributeArgumentMustBeAnIdentifier(this GeneratorContext ctx, CA.AttributeData attribute, int index)
     {
-        ctx.AddDiagnostics(_attributeArgumentMustBeAnIdentifier, [LocationOfCtorArgument(attribute, index)], [
+        ctx.AddDiagnostic(_attributeArgumentMustBeAnIdentifier, [LocationOfCtorArgument(attribute, index)], [
             attribute.AttributeConstructor?.Parameters[index].Name ?? "name",
             attribute.AttributeClass?.ToFullSignature() ?? "UNKNOWN"
         ]);
@@ -166,22 +166,22 @@ internal static class DiagnosticsExtensions
 
     public static void AttributeOnlyOnCase(this GeneratorContext ctx, string attributeName, IEnumerable<CA.AttributeData> attributes)
     {
-        ctx.AddDiagnostics(_attributeOnlyOnCase, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
+        ctx.AddDiagnostic(_attributeOnlyOnCase, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
     }
 
     public static void AttributeOnlyOnCaseTypeParameter(this GeneratorContext ctx, string attributeName, IEnumerable<CA.AttributeData> attributes)
     {
-        ctx.AddDiagnostics(_attributeOnlyOnCaseTypeParameter, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
+        ctx.AddDiagnostic(_attributeOnlyOnCaseTypeParameter, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
     }
 
     public static void AttributeOnlyOnClassOrStruct(this GeneratorContext ctx, string attributeName, IEnumerable<CA.AttributeData> attributes)
     {
-        ctx.AddDiagnostics(_attributeOnlyOnClassOrStruct, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
+        ctx.AddDiagnostic(_attributeOnlyOnClassOrStruct, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
     }
 
     public static void AttributePropertyMustBeAnIdentifier(this GeneratorContext ctx, CA.AttributeData attribute, string propertyName)
     {
-        ctx.AddDiagnostics(_attributePropertyMustBeAnIdentifier, [LocationOfPropertyArgument(attribute, propertyName)], [
+        ctx.AddDiagnostic(_attributePropertyMustBeAnIdentifier, [LocationOfPropertyArgument(attribute, propertyName)], [
             propertyName,
             attribute.AttributeClass?.ToFullSignature() ?? "UNKNOWN"
         ]);
@@ -189,7 +189,7 @@ internal static class DiagnosticsExtensions
 
     public static void AttributePropertyMustBeSpecificType(this GeneratorContext ctx, CA.AttributeData attribute, string propertyName, Type type)
     {
-        ctx.AddDiagnostics(_attributePropertyMustBeSpecificType, [LocationOfPropertyArgument(attribute, propertyName)], [
+        ctx.AddDiagnostic(_attributePropertyMustBeSpecificType, [LocationOfPropertyArgument(attribute, propertyName)], [
             propertyName,
             attribute.AttributeClass?.ToFullSignature() ?? "UNKNOWN",
             type.ToString()
@@ -206,12 +206,12 @@ internal static class DiagnosticsExtensions
             .Select(Location? (m) => m.GetLocation())
             .ToArray();
 
-        ctx.AddDiagnostics(_caseCannotBeARefStruct, refKeyword.Length == 0 ? @case.GetLocations() : refKeyword, []);
+        ctx.AddDiagnostic(_caseCannotBeARefStruct, refKeyword.Length == 0 ? @case.GetLocations() : refKeyword, []);
     }
 
     public static void CaseCannotBeLessAccessibleThanTheUnion(this GeneratorContext ctx, CA.INamedTypeSymbol union, CA.INamedTypeSymbol @case)
     {
-        ctx.AddDiagnostics(_caseCannotBeLessAccessibleThanTheUnion, @case.GetLocations(), [
+        ctx.AddDiagnostic(_caseCannotBeLessAccessibleThanTheUnion, @case.GetLocations(), [
             @case.ToFullSignature(),
             @case.DeclaredAccessibility.ToString(),
             union.ToFullSignature(),
@@ -221,17 +221,17 @@ internal static class DiagnosticsExtensions
 
     public static void CaseIsConfiguredButAlsoExcluded(this GeneratorContext ctx, IEnumerable<CA.AttributeData> exclude, IEnumerable<CA.AttributeData> config)
     {
-        ctx.AddDiagnostics(_caseIsConfiguredButAlsoExcluded, exclude.GetLocations(ctx.CancellationToken).Concat(config.GetLocations(ctx.CancellationToken)), []);
+        ctx.AddDiagnostic(_caseIsConfiguredButAlsoExcluded, exclude.GetLocations(ctx.CancellationToken).Concat(config.GetLocations(ctx.CancellationToken)), []);
     }
 
     public static void DuplicateAttribute(this GeneratorContext ctx, string attributeName, IEnumerable<CA.AttributeData> attributes)
     {
-        ctx.AddDiagnostics(_duplicateAttribute, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
+        ctx.AddDiagnostic(_duplicateAttribute, attributes.GetLocations(ctx.CancellationToken), [attributeName]);
     }
 
     public static void IncompatibleTypeParameters(this GeneratorContext ctx, TypeId case1, TypeParameter case1Parameter, TypeId case2, TypeParameter case2Parameter)
     {
-        ctx.AddDiagnostics(_incompatibleTypeParameters, case1Parameter.Location, [
+        ctx.AddDiagnostic(_incompatibleTypeParameters, case1Parameter.Location, [
             case1Parameter.Name,
             Helpers.ToFullName(case1),
             case2Parameter.Name,
@@ -241,37 +241,37 @@ internal static class DiagnosticsExtensions
 
     public static void InternalError(this GeneratorContext ctx, IEnumerable<Location?> locations, Exception ex)
     {
-        ctx.AddDiagnostics(_internalError, locations, [ex.ToString()]);
+        ctx.AddDiagnostic(_internalError, locations, [ex.ToString()]);
     }
 
     public static void UnionCannotBeStatic(this GeneratorContext ctx, CA.INamedTypeSymbol union)
     {
-        ctx.AddDiagnostics(_unionCannotBeStatic, union.GetLocations(), []);
+        ctx.AddDiagnostic(_unionCannotBeStatic, union.GetLocations(), []);
     }
 
     public static void UnionCannotHaveABaseType(this GeneratorContext ctx, CA.INamedTypeSymbol unionType)
     {
-        ctx.AddDiagnostics(_unionCannotHaveABaseType, unionType.GetLocations(), []);
+        ctx.AddDiagnostic(_unionCannotHaveABaseType, unionType.GetLocations(), []);
     }
 
     public static void UnionCannotHaveInstanceAutoProperties(this GeneratorContext ctx, CA.IPropertySymbol property)
     {
-        ctx.AddDiagnostics(_unionCannotHaveInstanceAutoProperties, property.GetLocations(), []);
+        ctx.AddDiagnostic(_unionCannotHaveInstanceAutoProperties, property.GetLocations(), []);
     }
 
     public static void UnionCannotHaveInstanceFields(this GeneratorContext ctx, CA.IFieldSymbol field)
     {
-        ctx.AddDiagnostics(_unionCannotHaveInstanceFields, field.GetLocations(), []);
+        ctx.AddDiagnostic(_unionCannotHaveInstanceFields, field.GetLocations(), []);
     }
 
     public static void UnionConstructorMustCallAnotherConstructor(this GeneratorContext ctx, CA.IMethodSymbol ctor)
     {
-        ctx.AddDiagnostics(_unionConstructorMustCallAnotherConstructor, ctor.GetLocations(), []);
+        ctx.AddDiagnostic(_unionConstructorMustCallAnotherConstructor, ctor.GetLocations(), []);
     }
 
     public static void UnionsShouldHave2OrMoreCases(this GeneratorContext ctx, IEnumerable<CA.AttributeData> attributes)
     {
-        ctx.AddDiagnostics(_unionsShouldHave2OrMoreCases, attributes.GetLocations(ctx.CancellationToken), []);
+        ctx.AddDiagnostic(_unionsShouldHave2OrMoreCases, attributes.GetLocations(ctx.CancellationToken), []);
     }
 
     private static Location? GetLocation(this CA.AttributeData attribute, CancellationToken token)
