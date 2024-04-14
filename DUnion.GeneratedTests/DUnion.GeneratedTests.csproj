@@ -6,7 +6,7 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>DUnion</RootNamespace>
-    <!--<DefineConstants>DUNION_OMIT_ATTRIBUTES</DefineConstants>-->
+    <DefineConstants>DUNION_OMIT_ATTRIBUTES</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--<ProjectReference Include="..\DUnion.Attributes\DUnion.Attributes.csproj" />-->
+    <ProjectReference Include="..\DUnion.Attributes\DUnion.Attributes.csproj" />
     <ProjectReference Include="..\DUnion\DUnion.csproj">
       <PrivateAssets>all</PrivateAssets>
       <OutputItemType>Analyzer</OutputItemType>

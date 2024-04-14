@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <Authors>danny-may</Authors>
+    <RepositoryUrl>https://github.com/danny-may/DUnion</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>union;discriminated union;tagged union;source generator</PackageTags>
+    <Version>$(VersionPrefix)$(VersionSuffix)</Version>
+    <VersionSuffix>-alpha.1</VersionSuffix>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

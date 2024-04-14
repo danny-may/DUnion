@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6</TargetFramework>
+    <PackageId>DUnion.Common</PackageId>
+    <Description>Some common discriminated union types, implemented by the DUnion source generator</Description>
   </PropertyGroup>
 
   <ItemGroup>

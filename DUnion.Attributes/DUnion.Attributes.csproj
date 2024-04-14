@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>DUnion.Attributes</PackageId>
     <RootNamespace>DUnion</RootNamespace>
-    <Description>A default implementation of the attribute used by DUnion</Description>
+    <Description>A default implementation of the attributes used by DUnion</Description>
   </PropertyGroup>
 
 </Project>
