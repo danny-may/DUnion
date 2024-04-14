@@ -94,7 +94,7 @@ public static class Result
     public readonly record struct Err<TErr>(TErr Error);
 }
 ```
-Or, Or, if you want to use the same name for the type parameter on the cases
+Or, if you want to use the same name for the type parameter on the cases
 ```csharp
 [DUnion]
 public static class Result
