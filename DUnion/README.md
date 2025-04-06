@@ -278,7 +278,7 @@ public readonly record struct MyUnion
 
 ## Is{Case}
 
-The `Is{Case}` method is intended to mimic the `x is Case value` expression. It returns `true` and sets `out value` to the value of the case if the current union represents the specified case; otherwise `false` and `default(Case)` will be used.
+The `Is{Case}` method is intended to mimic the `x is Case` and `x is Case value` expressions. It returns `true` and sets `out value` to the value of the case if the current union represents the specified case; otherwise `false` and `default(Case)` will be used.
 
 ```csharp
 [DUnion]
@@ -294,9 +294,9 @@ if (result.IsSome(out var some))
     // Do something with `some`
 }
 
-if (result.IsNone(out var none))
+if (result.IsNone())
 {
-    // Do something with `none`
+    // You dont have to pass an out parameter if you dont want to use it
 }
 ```
 
