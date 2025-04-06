@@ -100,7 +100,7 @@ namespace TestCases
             switch(this._discriminator)
             {
                 case 0:
-                    throw new System.InvalidOperationException("Union is not initialized");
+                    throw new System.InvalidOperationException("Union is not initialized.");
     
                 
                 default:

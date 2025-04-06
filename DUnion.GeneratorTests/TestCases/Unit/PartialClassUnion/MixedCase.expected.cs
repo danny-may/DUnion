@@ -209,6 +209,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case1" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case1" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase1()
+        {
+            return this._discriminator == 1;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case1" />; otherwise the default value of <see cref="TestCases.Union.Case1" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case1" />; otherwise the default value of <see cref="TestCases.Union.Case1" />.</returns>
@@ -316,6 +326,16 @@ namespace TestCases
                 value = default(TestCases.Union.Case2);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case2" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case2" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase2()
+        {
+            return this._discriminator == 2;
         }
         
         /// <summary>
@@ -429,6 +449,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case3" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case3" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase3()
+        {
+            return this._discriminator == 3;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case3" />; otherwise the default value of <see cref="TestCases.Union.Case3" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case3" />; otherwise the default value of <see cref="TestCases.Union.Case3" />.</returns>
@@ -539,6 +569,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case4" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case4" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase4()
+        {
+            return this._discriminator == 4;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case4" />; otherwise the default value of <see cref="TestCases.Union.Case4" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case4" />; otherwise the default value of <see cref="TestCases.Union.Case4" />.</returns>
@@ -620,6 +660,16 @@ namespace TestCases
                 value = default(TestCases.Union.Case5);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case5" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case5" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase5()
+        {
+            return this._discriminator == 5;
         }
         
         /// <summary>
@@ -733,6 +783,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case6" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case6" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase6()
+        {
+            return this._discriminator == 6;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case6" />; otherwise the default value of <see cref="TestCases.Union.Case6" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.Case6" />; otherwise the default value of <see cref="TestCases.Union.Case6" />.</returns>
@@ -840,6 +900,16 @@ namespace TestCases
                 value = default(TestCases.Union.Case7);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.Case7" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.Case7" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase7()
+        {
+            return this._discriminator == 7;
         }
         
         /// <summary>
@@ -987,7 +1057,7 @@ namespace TestCases
             switch(this._discriminator)
             {
                 case 0:
-                    throw new System.InvalidOperationException("Union is not initialized");
+                    throw new System.InvalidOperationException("Union is not initialized.");
     
                 case 1:
                     if (!System.Object.ReferenceEquals(caseCase1, null))

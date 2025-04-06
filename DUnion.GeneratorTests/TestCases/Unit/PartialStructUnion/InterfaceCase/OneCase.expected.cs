@@ -163,6 +163,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union" /> instance represents a <see cref="TestCases.Union.ICase1" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union" /> represents a <see cref="TestCases.Union.ICase1" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsICase1()
+        {
+            return this._discriminator == 1;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.ICase1" />; otherwise the default value of <see cref="TestCases.Union.ICase1" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union" /> represents if it is a <see cref="TestCases.Union.ICase1" />; otherwise the default value of <see cref="TestCases.Union.ICase1" />.</returns>
@@ -245,7 +255,7 @@ namespace TestCases
             switch(this._discriminator)
             {
                 case 0:
-                    throw new System.InvalidOperationException("Union is not initialized");
+                    throw new System.InvalidOperationException("Union is not initialized.");
     
                 case 1:
                     if (!System.Object.ReferenceEquals(caseICase1, null))

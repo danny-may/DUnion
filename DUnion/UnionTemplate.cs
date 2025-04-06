@@ -319,6 +319,16 @@ internal static class UnionTemplate
                     }
 
                     /// <summary>
+                    /// Determines if the current {{DocSee}} instance represents a {{c.DocSee}} or not.
+                    /// </summary>
+                    /// <returns><c>true</c> if this {{DocSee}} represents a {{c.DocSee}}; otherwise <c>false</c>.</returns>
+                    [{{_compilerGenerated}}]
+                    public {{_bool}} {{c.IsCase}}()
+                    {
+                        return this.{{Discriminator}} == {{c.Id}};
+                    }
+
+                    /// <summary>
                     /// Returns the value this {{DocSee}} represents if it is a {{c.DocSee}}; otherwise the default value of {{c.DocSee}}.
                     /// </summary>
                     /// <returns>the value this {{DocSee}} represents if it is a {{c.DocSee}}; otherwise the default value of {{c.DocSee}}.</returns>
@@ -435,7 +445,7 @@ internal static class UnionTemplate
                         switch(this.{{Discriminator}})
                         {
                             case 0:
-                                throw new {{_invalidOperationException}}("Union is not initialized");
+                                throw new {{_invalidOperationException}}("Union is not initialized.");
 
                             {{string.Join("\r\n", Cases.Select(c => $$"""
                             case {{c.Id}}:

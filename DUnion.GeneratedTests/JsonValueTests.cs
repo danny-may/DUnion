@@ -1339,7 +1339,7 @@ public static class JsonValueTests
         var actual = Assert.Throws<InvalidOperationException>(() => sut.Switch(@default: SwitchFail));
 
         // assert
-        actual.Message.Should().Be("Union is not initialized");
+        actual.Message.Should().Be("Union is not initialized.");
     }
 
     [Fact]

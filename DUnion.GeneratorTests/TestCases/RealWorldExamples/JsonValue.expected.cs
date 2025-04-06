@@ -123,6 +123,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.String" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.String" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsString()
+        {
+            return this._discriminator == 1;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.String" />; otherwise the default value of <see cref="TestCases.JsonValue.String" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.String" />; otherwise the default value of <see cref="TestCases.JsonValue.String" />.</returns>
@@ -230,6 +240,16 @@ namespace TestCases
                 value = default(TestCases.JsonValue.Number);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.Number" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Number" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsNumber()
+        {
+            return this._discriminator == 2;
         }
         
         /// <summary>
@@ -343,6 +363,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.Boolean" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Boolean" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsBoolean()
+        {
+            return this._discriminator == 3;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.Boolean" />; otherwise the default value of <see cref="TestCases.JsonValue.Boolean" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.Boolean" />; otherwise the default value of <see cref="TestCases.JsonValue.Boolean" />.</returns>
@@ -450,6 +480,16 @@ namespace TestCases
                 value = default(TestCases.JsonValue.Null);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.Null" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Null" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsNull()
+        {
+            return this._discriminator == 4;
         }
         
         /// <summary>
@@ -563,6 +603,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.Array" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Array" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsArray()
+        {
+            return this._discriminator == 5;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.Array" />; otherwise the default value of <see cref="TestCases.JsonValue.Array" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.JsonValue" /> represents if it is a <see cref="TestCases.JsonValue.Array" />; otherwise the default value of <see cref="TestCases.JsonValue.Array" />.</returns>
@@ -670,6 +720,16 @@ namespace TestCases
                 value = default(TestCases.JsonValue.Object);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.JsonValue" /> instance represents a <see cref="TestCases.JsonValue.Object" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.JsonValue" /> represents a <see cref="TestCases.JsonValue.Object" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsObject()
+        {
+            return this._discriminator == 6;
         }
         
         /// <summary>
@@ -811,7 +871,7 @@ namespace TestCases
             switch(this._discriminator)
             {
                 case 0:
-                    throw new System.InvalidOperationException("Union is not initialized");
+                    throw new System.InvalidOperationException("Union is not initialized.");
     
                 case 1:
                     if (!System.Object.ReferenceEquals(caseString, null))

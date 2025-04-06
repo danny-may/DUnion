@@ -108,6 +108,16 @@ namespace TestCases
         }
         
         /// <summary>
+        /// Determines if the current <see cref="TestCases.Union{T1, T2}" /> instance represents a <see cref="TestCases.Union.Case1{T1, T2}" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case1{T1, T2}" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase1()
+        {
+            return this._discriminator == 1;
+        }
+        
+        /// <summary>
         /// Returns the value this <see cref="TestCases.Union{T1, T2}" /> represents if it is a <see cref="TestCases.Union.Case1{T1, T2}" />; otherwise the default value of <see cref="TestCases.Union.Case1{T1, T2}" />.
         /// </summary>
         /// <returns>the value this <see cref="TestCases.Union{T1, T2}" /> represents if it is a <see cref="TestCases.Union.Case1{T1, T2}" />; otherwise the default value of <see cref="TestCases.Union.Case1{T1, T2}" />.</returns>
@@ -215,6 +225,16 @@ namespace TestCases
                 value = default(TestCases.Union.Case2<T1, T2>);
                 return false;
             }
+        }
+        
+        /// <summary>
+        /// Determines if the current <see cref="TestCases.Union{T1, T2}" /> instance represents a <see cref="TestCases.Union.Case2{T1, T2}" /> or not.
+        /// </summary>
+        /// <returns><c>true</c> if this <see cref="TestCases.Union{T1, T2}" /> represents a <see cref="TestCases.Union.Case2{T1, T2}" />; otherwise <c>false</c>.</returns>
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
+        public System.Boolean IsCase2()
+        {
+            return this._discriminator == 2;
         }
         
         /// <summary>
@@ -332,7 +352,7 @@ namespace TestCases
             switch(this._discriminator)
             {
                 case 0:
-                    throw new System.InvalidOperationException("Union is not initialized");
+                    throw new System.InvalidOperationException("Union is not initialized.");
     
                 case 1:
                     if (!System.Object.ReferenceEquals(caseCase1, null))
